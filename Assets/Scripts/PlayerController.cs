@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     public CharacterController charController;
     public GameObject playerModel;
 
+    public bool isKnocking;
+    public float knockBackLenght = .5f;
+    private float knockBackCounter;
+    public Vector2 knockbackPower;
+
     private void Awake()
     {
         instance = this;
@@ -33,30 +38,63 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float yStore = moveDirection.y;
 
-        moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        moveDirection.Normalize();
-        moveDirection = moveDirection * moveSpeed;
-        moveDirection.y = yStore;
-
-
-        if(charController.isGrounded)
+        if(!isKnocking)
         {
-            moveDirection.y = 0f;
+            float yStore = moveDirection.y;
 
-            if (Input.GetButtonDown("Jump"))
+            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            moveDirection.Normalize();
+            moveDirection = moveDirection * moveSpeed;
+            moveDirection.y = yStore;
+
+
+            if (charController.isGrounded)
             {
-                moveDirection.y = jumpForce;
+                moveDirection.y = 0f;
+
+                if (Input.GetButtonDown("Jump"))
+                {
+                    moveDirection.y = jumpForce;
+                }
+            }
+
+            moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
+
+            charController.Move(moveDirection * Time.deltaTime);
+
+
+            Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
+            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+        }
+
+        if(isKnocking)
+        {
+            knockBackCounter -= Time.deltaTime;
+
+            float yStore = moveDirection.y;
+            moveDirection = (playerModel.transform.forward = knockbackPower.x);
+            moveDirection.y = yStore;
+
+            moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
+
+            charController.Move(moveDirection * Time.deltaTime);
+
+
+            if (knockBackCounter <= 0)
+            {
+                isKnocking = false;
             }
         }
 
-        moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
+    }
 
+    public void Knockback()
+    {
+        isKnocking = true;
+        knockBackCounter = knockBackLenght;
+        Debug.Log("Knocked back");
+        moveDirection.y = knockbackPower.y;
         charController.Move(moveDirection * Time.deltaTime);
-
-
-        Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
-        playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
     }
 }
