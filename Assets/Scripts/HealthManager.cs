@@ -29,6 +29,24 @@ public class HealthManager : MonoBehaviour
         if(invincCounter > 0)
         {
             invincCounter -= Time.deltaTime;
+
+
+            for(int i = 0; i < PlayerController.instance.playerPieces.Length; i++)
+            {
+                if(Mathf.Floor(invincCounter * 5f) % 2 == 0)
+                {
+                    PlayerController.instance.playerPieces[i].SetActive(true);
+                }
+                else
+                {
+                    PlayerController.instance.playerPieces[i].SetActive(false);
+                }
+
+                if (invincCounter <= 0)
+                {
+                    PlayerController.instance.playerPieces[i].SetActive(true);
+                }
+            }
         }
     }
 
@@ -56,5 +74,14 @@ public class HealthManager : MonoBehaviour
     public void ResetHealth()
     {
         currentHealth = maxHealth;
+    }
+
+    public void AddHealth(int amountToHeal)
+    {
+        currentHealth += amountToHeal;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
     }
 }

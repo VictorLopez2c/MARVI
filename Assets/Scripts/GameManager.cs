@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
 
         PlayerController.instance.transform.position = respawnPosition;
         PlayerController.instance.gameObject.SetActive(true);
+
+        HealthManager.instance.ResetHealth();
     }
 
     public void SetSpawnPoint(Vector3 newSpawnPoint)
