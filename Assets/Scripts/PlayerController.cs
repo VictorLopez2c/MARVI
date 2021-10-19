@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
             knockBackCounter -= Time.deltaTime;
 
             float yStore = moveDirection.y;
-            moveDirection = (playerModel.transform.forward = knockbackPower.x);
+            moveDirection = (playerModel.transform.forward * knockbackPower.x);
             moveDirection.y = yStore;
 
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;

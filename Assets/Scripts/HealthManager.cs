@@ -9,6 +9,9 @@ public class HealthManager : MonoBehaviour
 
     public int currentHealth, maxHealth;
 
+    public float invincibleLenght = 2f;
+    private float invincCounter;
+
     private void Awake()
     {
         instance = this;
@@ -23,20 +26,35 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(invincCounter > 0)
+        {
+            invincCounter -= Time.deltaTime;
+        }
     }
 
     public void Hurt()
     {
-        currentHealth--;
+        if(invincCounter <= 0)
+        {
+            currentHealth--;
 
-        if(currentHealth <= 0)
-        {
-            currentHealth = 0;
-            GameManager.instance.Respawn();
-        }else
-        {
-            PlayerController.instance.Knockback();
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                GameManager.instance.Respawn();
+            }
+            else
+            {
+                PlayerController.instance.Knockback();
+                invincCounter = invincibleLenght;
+            }
+
         }
+
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
     }
 }
