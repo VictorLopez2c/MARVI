@@ -20,7 +20,8 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        ResetHealth();
+
     }
 
     // Update is called once per frame
@@ -69,11 +70,14 @@ public class HealthManager : MonoBehaviour
 
         }
 
+        UpdateUI();
+
     }
 
     public void ResetHealth()
     {
         currentHealth = maxHealth;
+        UpdateUI();
     }
 
     public void AddHealth(int amountToHeal)
@@ -83,5 +87,12 @@ public class HealthManager : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        UIManager.instance.healthText.text = currentHealth.ToString();
     }
 }
