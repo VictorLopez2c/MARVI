@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     private Vector3 respawnPosition;
 
+    public int currentGold;
+
     private void Awake()
     {
         instance = this;
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         respawnPosition = PlayerController.instance.transform.position;
+
+        AddGold(0);
     }
 
     
@@ -53,4 +57,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Spawn Set");
     }
 
+    public void AddGold(int goldToAdd)
+    {
+        currentGold += goldToAdd;
+        UIManager.instance.goldText.text = "" + currentGold;
+    }
 }
