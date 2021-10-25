@@ -16,6 +16,10 @@ public class UIManager : MonoBehaviour
     public Image healthImage;
 
     public Text goldText;
+    public Image goldImage;
+
+    public GameObject pauseScreen, optionsScreen;
+
 
     private void Awake()
     {
@@ -50,5 +54,25 @@ public class UIManager : MonoBehaviour
                 fadeFromBlack = false;
             }
         }
+    }
+
+    public void Resume()
+    {
+        GameManager.instance.PauseUnpause();
+    }
+
+    public void OpenOptions()
+    {
+        optionsScreen.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        optionsScreen.SetActive(false);
+    }
+
+    public void MainMenu()
+    {
+
     }
 }

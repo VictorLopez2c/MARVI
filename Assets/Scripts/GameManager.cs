@@ -27,7 +27,10 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            PauseUnpause();
+        }
     }
 
     public void Respawn()
@@ -61,5 +64,27 @@ public class GameManager : MonoBehaviour
     {
         currentGold += goldToAdd;
         UIManager.instance.goldText.text = "" + currentGold;
+    }
+
+    public void PauseUnpause()
+    {
+        if (UIManager.instance.pauseScreen.activeInHierarchy)
+        {
+            UIManager.instance.pauseScreen.SetActive(false);
+            Time.timeScale = 1f;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    
+        else
+        {
+            UIManager.instance.pauseScreen.SetActive(true);
+            UIManager.instance.CloseOptions();
+            Time.timeScale = 0f;
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
