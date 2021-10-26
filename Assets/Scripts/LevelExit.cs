@@ -9,6 +9,8 @@ public class LevelExit : MonoBehaviour
         if (other.tag == "Player")
         {
             StartCoroutine(GameManager.instance.LevelEndWaiter());
+
+
         }
     }
 

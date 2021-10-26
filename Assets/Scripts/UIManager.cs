@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class UIManager : MonoBehaviour
     public Image goldImage;
 
     public GameObject pauseScreen, optionsScreen;
+
+    public string Main;
 
 
     private void Awake()
@@ -73,6 +76,6 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
-
+        SceneManager.LoadScene(Main);
     }
 }
