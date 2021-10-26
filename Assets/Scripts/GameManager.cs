@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     private Vector3 respawnPosition;
 
     public int currentGold;
+
+    public string levelToLoad;
 
     private void Awake()
     {
@@ -86,5 +89,15 @@ public class GameManager : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
+    }
+
+    public IEnumerator LevelEndWaiter()
+    {
+        PlayerController.instance.stopMove = true;
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(levelToLoad);
+
+
     }
 }

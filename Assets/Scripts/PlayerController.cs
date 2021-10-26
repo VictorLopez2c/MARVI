@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject[] playerPieces;
 
+    public bool stopMove;
+
     private void Awake()
     {
         instance = this;
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if(!isKnocking)
+        if(!isKnocking && !stopMove)
         {
             float yStore = moveDirection.y;
 
@@ -87,6 +89,13 @@ public class PlayerController : MonoBehaviour
             {
                 isKnocking = false;
             }
+        }
+
+        if (stopMove)
+        {
+            moveDirection = Vector3.zero;
+            moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
+            charController.Move(moveDirection);
         }
 
     }
