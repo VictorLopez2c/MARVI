@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController charController;
     public GameObject playerModel;
+    public Camera playerCamera;
 
     public bool isKnocking;
     public float knockBackLenght = .5f;
@@ -27,19 +28,19 @@ public class PlayerController : MonoBehaviour
 
     public bool stopMove;
 
+    
+
     private void Awake()
     {
         instance = this;
     }
 
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
             charController.Move(moveDirection * Time.deltaTime);
 
-
+            transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }
