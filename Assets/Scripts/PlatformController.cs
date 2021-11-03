@@ -24,7 +24,7 @@ public class PlatformController : MonoBehaviour
         if (moveToTheNext)
         {
             StopCoroutine(WaitForMove(0));
-            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, platformPositions[1].position, platformSpeed * Time.deltaTime));
+            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, platformPositions[nextPosition].position, platformSpeed * Time.deltaTime));
         }
         
 
