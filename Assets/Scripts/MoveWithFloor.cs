@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveWithFloor : MonoBehaviour
 {
-    CharacterController player;
+    CharacterController Player;
 
     Vector3 groundPosition;
     Vector3 lastGroundPosition;
@@ -14,18 +14,18 @@ public class MoveWithFloor : MonoBehaviour
 
     void Start()
     {
-        player = this.GetComponent<CharacterController>();
+        Player = this.GetComponent<CharacterController>();
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
-        if (player.isGrounded)
+        if (Player.isGrounded)
         {
             RaycastHit hit;
 
-            if (Physics.SphereCast(transform.position, player.height / 4.2f, -transform.up, out hit))
+            if (Physics.SphereCast(transform.position, Player.height / 4.2f, -transform.up, out hit))
             {
                 GameObject groundedIn = hit.collider.gameObject;
                 groundName = groundedIn.name;
@@ -40,7 +40,7 @@ public class MoveWithFloor : MonoBehaviour
                 lastGroundPosition = groundPosition;
             }
         }
-        else if (!player.isGrounded)
+        else if (!Player.isGrounded)
         {
             lastGroundname = null;
             lastGroundPosition = Vector3.zero;
@@ -49,7 +49,7 @@ public class MoveWithFloor : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        player = this.GetComponent<CharacterController>();
-        Gizmos.DrawWireSphere(transform.position, player.height /4.2f);
+        Player = this.GetComponent<CharacterController>();
+        Gizmos.DrawWireSphere(transform.position, Player.height /4.2f);
     }
 }
