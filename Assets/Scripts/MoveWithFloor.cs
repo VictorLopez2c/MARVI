@@ -30,10 +30,14 @@ public class MoveWithFloor : MonoBehaviour
                 GameObject groundedIn = hit.collider.gameObject;
                 groundName = groundedIn.name;
                 groundPosition = groundedIn.transform.position;
-
+                Debug.Log("1");
                 if (groundPosition != lastGroundPosition && groundName == lastGroundname)
                 {
+                    Debug.Log("2");
                     this.transform.position += groundPosition - lastGroundPosition;
+                    Player.enabled = false;
+                    Player.transform.position = this.transform.position;
+                    Player.enabled = true;
                 }
 
                 lastGroundname = groundName;

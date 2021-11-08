@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public float knockBackLenght = .5f;
     private float knockBackCounter;
     public Vector2 knockbackPower;
+    
 
     public GameObject[] playerPieces;
 
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+            
         }
 
         if(isKnocking)
