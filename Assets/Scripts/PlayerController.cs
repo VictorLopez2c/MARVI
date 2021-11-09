@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    Vector3 lastMoveDirectionOverXZ;
     void Update()
     {
 
@@ -49,9 +50,18 @@ public class PlayerController : MonoBehaviour
         {
             float yStore = moveDirection.y;
 
-            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            Vector3 moveDirectionOverXZ = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            Camera camera = Camera.main;
+            moveDirectionOverXZ = camera.transform.TransformDirection(moveDirectionOverXZ);
+            moveDirectionOverXZ = Vector3.ProjectOnPlane(moveDirectionOverXZ, Vector3.up);
+
+            Debug.DrawRay(transform.position, moveDirectionOverXZ.normalized * 5f, Color.green, 0.1f);
+
+            moveDirection = moveDirectionOverXZ;
+
             moveDirection.Normalize();
             moveDirection = moveDirection * moveSpeed;
+
             moveDirection.y = yStore;
 
 
@@ -69,8 +79,14 @@ public class PlayerController : MonoBehaviour
 
             charController.Move(moveDirection * Time.deltaTime);
 
-            transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
-            Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
+            if (moveDirectionOverXZ.sqrMagnitude > 0.01f)
+            {
+                lastMoveDirectionOverXZ = moveDirectionOverXZ;
+            }
+
+            //transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
+            Quaternion newRotation = Quaternion.LookRotation(lastMoveDirectionOverXZ);
+            Debug.DrawRay(transform.position, lastMoveDirectionOverXZ.normalized * 5f, Color.red, 0.1f);
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
             
         }
