@@ -2936,6 +2936,11 @@ PrefabInstance:
       propertyPath: m_StepOffset
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6673916024330736319, guid: 05b861ae0fe31fa48a85d6b9a95bbb16,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 7541575307361286599, guid: 05b861ae0fe31fa48a85d6b9a95bbb16,
         type: 3}
       propertyPath: m_HDR
