@@ -23,7 +23,10 @@ public class PlayerController : MonoBehaviour
     public float knockBackLenght = .5f;
     private float knockBackCounter;
     public Vector2 knockbackPower;
-    
+
+    public bool isOnSlope = false;
+    private Vector3 hitNormal;
+    public float slideVelocity;
 
     public GameObject[] playerPieces;
 
@@ -39,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+        charController = GetComponent<CharacterController>();
     }
 
     Vector3 lastMoveDirectionOverXZ;
@@ -68,7 +71,7 @@ public class PlayerController : MonoBehaviour
             if (charController.isGrounded)
             {
                 moveDirection.y = 0f;
-
+                SlideDown();
                 if (Input.GetButtonDown("Jump"))
                 {
                     moveDirection.y = jumpForce;
@@ -84,7 +87,6 @@ public class PlayerController : MonoBehaviour
                 lastMoveDirectionOverXZ = moveDirectionOverXZ;
             }
 
-            //transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
             Quaternion newRotation = Quaternion.LookRotation(lastMoveDirectionOverXZ);
             Debug.DrawRay(transform.position, lastMoveDirectionOverXZ.normalized * 5f, Color.red, 0.1f);
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
@@ -126,5 +128,21 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Knocked back");
         moveDirection.y = knockbackPower.y;
         charController.Move(moveDirection * Time.deltaTime);
+    }
+
+    public void SlideDown()
+    {
+        isOnSlope = Vector3.Angle(Vector3.up, hitNormal) >= charController.slopeLimit;
+
+        if (isOnSlope)
+        {
+            moveDirection.x += hitNormal.x * slideVelocity;
+            moveDirection.z += hitNormal.z * slideVelocity;
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        hitNormal = hit.normal;
     }
 }
