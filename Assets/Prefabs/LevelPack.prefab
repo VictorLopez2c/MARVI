@@ -362,7 +362,8 @@ MonoBehaviour:
   knockBackLenght: 0.5
   knockbackPower: {x: -3, y: 7}
   isOnSlope: 0
-  slideVelocity: 7
+  slideVelocity: 3
+  slopeForceDown: -10
   playerPieces:
   - {fileID: 7173530796379919663}
   - {fileID: 8198238883445211494}

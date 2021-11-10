@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public bool isOnSlope = false;
     private Vector3 hitNormal;
     public float slideVelocity;
+    public float slopeForceDown;
 
     public GameObject[] playerPieces;
 
@@ -136,8 +137,10 @@ public class PlayerController : MonoBehaviour
 
         if (isOnSlope)
         {
-            moveDirection.x += hitNormal.x * slideVelocity;
-            moveDirection.z += hitNormal.z * slideVelocity;
+            moveDirection.x += ((1f - hitNormal.y) * hitNormal.x) * slideVelocity;
+            moveDirection.z += ((1f - hitNormal.y) * hitNormal.z) * slideVelocity;
+
+            moveDirection.y += slopeForceDown;
         }
     }
 
