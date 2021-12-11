@@ -5,18 +5,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public GameObject cpON, cpOFF;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public GameObject healthEffect;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -30,8 +19,9 @@ public class Checkpoint : MonoBehaviour
                 allCP[i].cpON.SetActive(false);
             }
 
-            cpOFF.SetActive(false);
-            cpON.SetActive(true);
+            Instantiate(healthEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
+            //cpOFF.SetActive(false);
+            //cpON.SetActive(true);
         }
     }
 

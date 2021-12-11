@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6013004017605274798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.34, y: 0.45, z: 13.22}
-  m_LocalScale: {x: 0.55269, y: 0.55269, z: 0.55269}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7126844539620697397}
   m_Father: {fileID: 0}
@@ -60,7 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healAmount: 4
   isFullHealth: 0
-  healthEffect: {fileID: 0}
+  healthEffect: {fileID: 4931011316806215969, guid: d32b84205ab68a541bacdbcdc8c7cc82,
+    type: 3}
 --- !u!1001 &5731071235369505144
 PrefabInstance:
   m_ObjectHideFlags: 0
