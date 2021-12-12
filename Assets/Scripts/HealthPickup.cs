@@ -6,7 +6,7 @@ public class HealthPickup : MonoBehaviour
 {
     public int healAmount;
     public bool isFullHealth;
-
+    public AudioSource healthSound;
     public GameObject healthEffect;
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +16,7 @@ public class HealthPickup : MonoBehaviour
 
 
             Destroy(gameObject);
-
+            healthSound.Play();
             Instantiate(healthEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
 
             if(isFullHealth)

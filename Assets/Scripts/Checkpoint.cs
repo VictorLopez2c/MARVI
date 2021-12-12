@@ -19,9 +19,8 @@ public class Checkpoint : MonoBehaviour
                 allCP[i].cpON.SetActive(false);
             }
 
-            Instantiate(healthEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
-            //cpOFF.SetActive(false);
-            //cpON.SetActive(true);
+            cpOFF.SetActive(false);
+            cpON.SetActive(true);
         }
     }
 

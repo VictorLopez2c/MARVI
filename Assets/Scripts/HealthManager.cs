@@ -12,6 +12,8 @@ public class HealthManager : MonoBehaviour
     public float invincibleLenght = 2f;
     private float invincCounter;
 
+    public AudioSource hitSound;
+    public AudioSource deathSound;
     private void Awake()
     {
         instance = this;
@@ -61,11 +63,13 @@ public class HealthManager : MonoBehaviour
             {
                 currentHealth = 0;
                 GameManager.instance.Respawn();
+                deathSound.Play();
             }
             else
             {
                 PlayerController.instance.Knockback();
                 invincCounter = invincibleLenght;
+                hitSound.Play();
             }
 
         }

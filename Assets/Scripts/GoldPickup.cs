@@ -9,6 +9,8 @@ public class GoldPickup : MonoBehaviour
 
     public GameObject goldEffect;
 
+    public AudioSource goldSound;
+
     void Start()
     {
         
@@ -24,7 +26,10 @@ public class GoldPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+
             GameManager.instance.AddGold(value);
+            goldSound.Play();
+
             Destroy(gameObject);
             Instantiate(goldEffect, transform.position, transform.rotation);
         }
