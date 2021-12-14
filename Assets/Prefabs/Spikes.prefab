@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2542104783607025142}
   m_Layer: 0
   m_Name: Spikes
-  m_TagString: Untagged
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77fe8b80dc4097d468d2b60489ac792a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitEffect: {fileID: 7604899446990337470, guid: 68cff5571ba003c47b39f95d7d9d96b3,
+    type: 3}
 --- !u!1001 &2542104783904009384
 PrefabInstance:
   m_ObjectHideFlags: 0

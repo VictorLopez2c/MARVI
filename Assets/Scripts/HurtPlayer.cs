@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class HurtPlayer : MonoBehaviour
 {
-  
-    
+
+
+ 
+    public GameObject HitEffect;
+
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Damage")
         {
             HealthManager.instance.Hurt();
+            Instantiate(HitEffect,transform.position, transform.rotation);
+
         }
     }
 
