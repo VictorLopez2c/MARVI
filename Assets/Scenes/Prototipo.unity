@@ -847,6 +847,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &559340884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559340885}
+  - component: {fileID: 559340886}
+  - component: {fileID: 559340887}
+  m_Layer: 0
+  m_Name: HurtBox
+  m_TagString: Damage
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &559340885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559340884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1573997546}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &559340886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559340884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.67296475, y: 0.3296005, z: 0.5701987}
+  m_Center: {x: -0.013438424, y: 0.39572042, z: 0.34447765}
+--- !u!114 &559340887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559340884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77fe8b80dc4097d468d2b60489ac792a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitEffect: {fileID: 0}
 --- !u!1 &580959272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,6 +3122,7 @@ Transform:
   m_Children:
   - {fileID: 886814672}
   - {fileID: 1909837518}
+  - {fileID: 559340885}
   m_Father: {fileID: 1517358626}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -3087,6 +3146,8 @@ MonoBehaviour:
   agent: {fileID: 1573997548}
   waitAtPoint: 2
   chaseRange: 4
+  attackRange: 1
+  timeBetweenAttacks: 2
   currentState: 0
 --- !u!195 &1573997548
 NavMeshAgent:
@@ -3530,7 +3591,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881262066}
-  m_LocalRotation: {x: 0.33602092, y: 0.18210682, z: -0.0663905, w: 0.92169374}
+  m_LocalRotation: {x: 0.33602092, y: 0.18210684, z: -0.06639049, w: 0.92169374}
   m_LocalPosition: {x: 7.85, y: 4.87, z: 4.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4930,7 +4991,7 @@ PrefabInstance:
     - target: {fileID: 6502066630113853612, guid: 05b861ae0fe31fa48a85d6b9a95bbb16,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.19202468
+      value: 0.1920247
       objectReference: {fileID: 0}
     - target: {fileID: 6502066630113853612, guid: 05b861ae0fe31fa48a85d6b9a95bbb16,
         type: 3}
