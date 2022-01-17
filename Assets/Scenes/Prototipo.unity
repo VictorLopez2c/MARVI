@@ -1360,6 +1360,7 @@ MonoBehaviour:
   m_Script: {fileID: 1713180782}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &598283401
 Transform:
   m_ObjectHideFlags: 19
@@ -7161,6 +7162,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8020421282708954308, guid: 8039b63d70dc2bc4593a4f489825dd35,
+        type: 3}
+      propertyPath: waitAtPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8020421282820118797, guid: 8039b63d70dc2bc4593a4f489825dd35,
         type: 3}
       propertyPath: m_RootOrder
@@ -7221,7 +7227,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alux
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1059493867, guid: 8039b63d70dc2bc4593a4f489825dd35, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8039b63d70dc2bc4593a4f489825dd35, type: 3}
 --- !u!1001 &9044178296804831641
 PrefabInstance:

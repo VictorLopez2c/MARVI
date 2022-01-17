@@ -16,16 +16,16 @@ public class EnemiCont : MonoBehaviour
 
     public float chaseRange;
 
-    /*public float attackRange = 1f;
+    public float attackRange = 1f;
     public float timeBetweenAttacks = 2f;
-    private float attackCounter;*/
+    private float attackCounter;
 
     public enum AIState
     {
         Idle,
         Patrolling,
         Chasing,
-        //Attacking
+        Attacking
     };
     public AIState currentState;
 
@@ -69,7 +69,7 @@ void Update()
                 if (agent.remainingDistance <= .2f)
                 {
                     currentPatrolPoint++;
-                    if (currentPatrolPoint > 2) //Cambiar Num por numero de Point Patrolls
+                    if (currentPatrolPoint >= patrolPoints.Length) //Cambiar Num por numero de Point Patrolls
                     {
                         currentPatrolPoint = 0;
                     }
@@ -92,7 +92,7 @@ void Update()
 
                 agent.SetDestination(PlayerController.instance.transform.position);
 
-                /*if (distanceToPlayer <= attackRange)
+                if (distanceToPlayer <= attackRange)
                 {
                     currentState = AIState.Attacking;
                     //animator.SetTrigger("Attack");
@@ -102,7 +102,7 @@ void Update()
                     agent.isStopped = true;
 
                     attackCounter = timeBetweenAttacks;
-                }*/
+                }
 
                 if (distanceToPlayer > chaseRange)
                 {
@@ -115,7 +115,7 @@ void Update()
 
                 break;
             
-           /* case AIState.Attacking:
+            case AIState.Attacking:
 
                 transform.LookAt(PlayerController.instance.transform, Vector3.up);
                 transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
@@ -136,7 +136,7 @@ void Update()
                         agent.isStopped = false;
 
                     }
-                }*/
+                }
 
                 break;
         }
