@@ -7164,6 +7164,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8020421282708954308, guid: 8039b63d70dc2bc4593a4f489825dd35,
         type: 3}
+      propertyPath: attackRange
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020421282708954308, guid: 8039b63d70dc2bc4593a4f489825dd35,
+        type: 3}
       propertyPath: waitAtPoint
       value: 1
       objectReference: {fileID: 0}
