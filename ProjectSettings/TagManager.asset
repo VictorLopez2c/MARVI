@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MovingPlatform
   - Damage
+  - PlayerInteractionZone
   layers:
   - Default
   - TransparentFX
