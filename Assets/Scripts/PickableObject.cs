@@ -9,7 +9,7 @@ public class PickableObject : MonoBehaviour
     {
         if (other.tag == "PlayerInteractionZone")
         {
-            other.GetComponent<PickUpObject>().ObjectToPickUp = this.gameObject;
+            other.GetComponentInParent<PickUpObject>().ObjectToPickUp = this.gameObject;
         }
     }
 
@@ -17,7 +17,7 @@ public class PickableObject : MonoBehaviour
     {
         if (other.tag == "PlayerInteractionZone")
         {
-            other.GetComponent<PickUpObject>().ObjectToPickUp = null;
+            other.GetComponentInParent<PickUpObject>().ObjectToPickUp = null;
         }
     }
 }
