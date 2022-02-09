@@ -16,9 +16,23 @@ public class EnemiCont : MonoBehaviour
 
     public float chaseRange;
 
+    public float PlayerRange;
+
     public float attackRange = 1f;
     public float timeBetweenAttacks = 2f;
     private float attackCounter;
+    public bool TeVeo = false;
+    public bool TeSiento = false;
+    public bool cerca = false;
+
+    //public PlayerController variable correr;
+
+
+    public PlayerController putasoHit;
+    public int _DaNo = 0;
+    //private List<PlayerController> PlayerList;
+
+    public VisionEnemiga see;
 
     public enum AIState
     {
@@ -32,17 +46,41 @@ public class EnemiCont : MonoBehaviour
     void Start()
     {
         waitCounter = waitAtPoint;
+        putasoHit = GameObject.Find("Player").GetComponent<PlayerController>();
+        see = GameObject.Find("Vista").GetComponent<VisionEnemiga>();
+        //variable correr = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
 
-void Update()
+
+    public void Update()
     {
-       float distanceToPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
+        //PlayerController PlayerScript = GetComponent<PlayerController>();
+        //PlayerController variable = GetComponent<PlayerController>();
+        //putasohit = variable.putaso;
+        if(putasoHit != null) putasoHit = GameObject.Find("Player").GetComponent<PlayerController>();
+        if (see != null) see = GameObject.Find("Vista").GetComponent<VisionEnemiga>();
+        //if (variable correr != null) variable correr = GameObject.Find("Player").GetComponent<PlayerController>();
+
+
+        if (putasoHit != null && putasoHit.putaso == true){
+            _DaNo = 1;
+        }
+
+
+        float distanceToPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
+
+        if (distanceToPlayer <= PlayerRange)
+        {
+            TeSiento = true;
+        }
 
         switch (currentState)
         {
             case AIState.Idle:
                 //animator.SetBool("IsMoving", false);
+                cerca = false;
+                TeVeo = false;
 
                 if (waitCounter > 0)
                 {
@@ -54,10 +92,12 @@ void Update()
                     agent.SetDestination(patrolPoints[currentPatrolPoint].position);
                 }
 
-                if (distanceToPlayer <= chaseRange)
+                if (see.vision == true)
                 {
                     currentState = AIState.Chasing;
                     //animator.SetBool("IsMoving", true);
+                    cerca = true;
+                    TeVeo = true;
                 }
 
                 break;
@@ -79,12 +119,21 @@ void Update()
                     waitCounter = waitAtPoint;
                 }
 
-                if (distanceToPlayer <= chaseRange)
+                if (see.vision == true) //&& distanceToPlayer <= chaseRange)
                 {
                     currentState = AIState.Chasing;
+                    cerca = true;
+                    TeVeo = true;
                 }
 
-               // animator.SetBool("IsMoving", true);
+                //Deteccion al correr
+
+                /*else if ("variable correr == true" && distanceToPlayer < attackRange)
+                {
+                    currentState = AIState.Chasing;
+                }*/
+
+                // animator.SetBool("IsMoving", true);
 
                 break;
 
@@ -92,7 +141,8 @@ void Update()
 
                 agent.SetDestination(PlayerController.instance.transform.position);
 
-                if (distanceToPlayer <= attackRange)
+
+                if (distanceToPlayer <= attackRange) // para hacer un rango (distanceToPlayer < attackRange)
                 {
                     currentState = AIState.Attacking;
                     //animator.SetTrigger("Attack");
@@ -127,6 +177,7 @@ void Update()
                     {
                         //animator.SetTrigger("Attack");
                         attackCounter = timeBetweenAttacks;
+                        TeVeo = true;
                     }
                     else
                     {
@@ -135,11 +186,26 @@ void Update()
 
                         agent.isStopped = false;
 
-                    }
+                    }    
+
                 }
 
                 break;
         }
+       
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+
+            //GameManager.instance.AddGold(value);
+
+            //Destroy(gameObject);
+
+        }
+    }
 }
+
