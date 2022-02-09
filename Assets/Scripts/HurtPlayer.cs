@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class HurtPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+ 
+    public GameObject HitEffect;
+
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Damage")
         {
             HealthManager.instance.Hurt();
+            Instantiate(HitEffect,transform.position, transform.rotation);
+
         }
     }
 

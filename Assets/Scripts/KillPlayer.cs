@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
+    public AudioSource deathSound;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            Debug.Log("Marc pichacorta");
             GameManager.instance.Respawn();
-
+            deathSound.Play();
         }
     }
 }
