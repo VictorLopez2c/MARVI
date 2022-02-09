@@ -16,23 +16,9 @@ public class EnemiCont : MonoBehaviour
 
     public float chaseRange;
 
-    public float PlayerRange;
-
     public float attackRange = 1f;
     public float timeBetweenAttacks = 2f;
     private float attackCounter;
-    public bool TeVeo = false;
-    public bool TeSiento = false;
-    public bool cerca = false;
-
-    //public PlayerController variable correr;
-
-
-    public PlayerController putasoHit;
-    public int _DaNo = 0;
-    //private List<PlayerController> PlayerList;
-
-    public VisionEnemiga see;
 
     public enum AIState
     {
@@ -46,41 +32,17 @@ public class EnemiCont : MonoBehaviour
     void Start()
     {
         waitCounter = waitAtPoint;
-        putasoHit = GameObject.Find("Player").GetComponent<PlayerController>();
-        see = GameObject.Find("Vista").GetComponent<VisionEnemiga>();
-        //variable correr = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
 
-
-    public void Update()
+void Update()
     {
-        //PlayerController PlayerScript = GetComponent<PlayerController>();
-        //PlayerController variable = GetComponent<PlayerController>();
-        //putasohit = variable.putaso;
-        if(putasoHit != null) putasoHit = GameObject.Find("Player").GetComponent<PlayerController>();
-        if (see != null) see = GameObject.Find("Vista").GetComponent<VisionEnemiga>();
-        //if (variable correr != null) variable correr = GameObject.Find("Player").GetComponent<PlayerController>();
-
-
-        if (putasoHit != null && putasoHit.putaso == true){
-            _DaNo = 1;
-        }
-
-
-        float distanceToPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
-
-        if (distanceToPlayer <= PlayerRange)
-        {
-            TeSiento = true;
-        }
+       float distanceToPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
 
         switch (currentState)
         {
             case AIState.Idle:
                 //animator.SetBool("IsMoving", false);
-                cerca = false;
-                TeVeo = false;
 
                 if (waitCounter > 0)
                 {
@@ -92,12 +54,10 @@ public class EnemiCont : MonoBehaviour
                     agent.SetDestination(patrolPoints[currentPatrolPoint].position);
                 }
 
-                if (see.vision == true)
+                if (distanceToPlayer <= chaseRange)
                 {
                     currentState = AIState.Chasing;
                     //animator.SetBool("IsMoving", true);
-                    cerca = true;
-                    TeVeo = true;
                 }
 
                 break;
@@ -119,21 +79,12 @@ public class EnemiCont : MonoBehaviour
                     waitCounter = waitAtPoint;
                 }
 
-                if (see.vision == true) //&& distanceToPlayer <= chaseRange)
+                if (distanceToPlayer <= chaseRange)
                 {
                     currentState = AIState.Chasing;
-                    cerca = true;
-                    TeVeo = true;
                 }
 
-                //Deteccion al correr
-
-                /*else if ("variable correr == true" && distanceToPlayer < attackRange)
-                {
-                    currentState = AIState.Chasing;
-                }*/
-
-                // animator.SetBool("IsMoving", true);
+               // animator.SetBool("IsMoving", true);
 
                 break;
 
@@ -141,8 +92,7 @@ public class EnemiCont : MonoBehaviour
 
                 agent.SetDestination(PlayerController.instance.transform.position);
 
-
-                if (distanceToPlayer <= attackRange) // para hacer un rango (distanceToPlayer < attackRange)
+                if (distanceToPlayer <= attackRange)
                 {
                     currentState = AIState.Attacking;
                     //animator.SetTrigger("Attack");
@@ -177,7 +127,6 @@ public class EnemiCont : MonoBehaviour
                     {
                         //animator.SetTrigger("Attack");
                         attackCounter = timeBetweenAttacks;
-                        TeVeo = true;
                     }
                     else
                     {
@@ -186,26 +135,11 @@ public class EnemiCont : MonoBehaviour
 
                         agent.isStopped = false;
 
-                    }    
-
+                    }
                 }
 
                 break;
         }
-       
 
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-
-            //GameManager.instance.AddGold(value);
-
-            //Destroy(gameObject);
-
-        }
     }
 }
-

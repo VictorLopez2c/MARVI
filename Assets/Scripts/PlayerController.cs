@@ -33,12 +33,7 @@ public class PlayerController : MonoBehaviour
 
     public bool stopMove;
 
-    public EnemiCont MeVes;
-    public EnemiCont MeSientes;
-    public bool _Golpe = true; //variable para definir ataque ligero(true) o ataque mortal(false)
-
-    public bool putaso = false;
-    public EnemiCont destruir;
+    
 
     private void Awake()
     {
@@ -49,37 +44,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         charController = GetComponent<CharacterController>();
-        MeVes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
-        MeSientes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
     }
 
     Vector3 lastMoveDirectionOverXZ;
-
-    public void Update()
+    void Update()
     {
-       
-        if (MeVes != null) MeVes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
-        if (MeSientes != null) MeSientes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
 
-        if (MeSientes.TeSiento == true && MeVes.TeVeo == false){
-            _Golpe = false;
-        }
-        if (MeVes.TeVeo == false && MeSientes.TeSiento == false)
-        {
-            _Golpe = true;
-        }
-
-        if (MeVes != null && MeVes.TeVeo == true){ //Pasa a combate ligero
-        
-            _Golpe = true;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            putaso = true;
-            //aqui ejecutar animacion de ataque
-        }
-            if (!isKnocking && !stopMove)
+        if(!isKnocking && !stopMove)
         {
             float yStore = moveDirection.y;
 
