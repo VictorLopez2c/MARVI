@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection;
 
     public CharacterController charController;
+    
     public GameObject playerModel;
     public Camera playerCamera;
 
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     public bool stopMove;
 
-    //public EnemiCont MeVes;
+    //public MeVes;
     //public EnemiCont MeSientes;
     public bool canStealthKill = false; //variable para definir ataque ligero(true) o ataque mortal(false)
 
