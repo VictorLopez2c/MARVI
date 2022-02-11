@@ -33,9 +33,9 @@ public class PlayerController : MonoBehaviour
 
     public bool stopMove;
 
-    public EnemiCont MeVes;
-    public EnemiCont MeSientes;
-    public bool _Golpe = true; //variable para definir ataque ligero(true) o ataque mortal(false)
+    //public EnemiCont MeVes;
+    //public EnemiCont MeSientes;
+    public bool canStealthKill = false; //variable para definir ataque ligero(true) o ataque mortal(false)
 
     public bool putaso = false;
     public EnemiCont destruir;
@@ -49,29 +49,35 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         charController = GetComponent<CharacterController>();
-        MeVes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
-        MeSientes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
+        //MeVes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
+        //MeSientes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
     }
 
     Vector3 lastMoveDirectionOverXZ;
 
     public void Update()
     {
-       
-        if (MeVes != null) MeVes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
-        if (MeSientes != null) MeSientes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
 
-        if (MeSientes.TeSiento == true && MeVes.TeVeo == false){
-            _Golpe = false;
-        }
-        if (MeVes.TeVeo == false && MeSientes.TeSiento == false)
+        //if (MeVes == null) MeVes = GameObject.Find("Enemy")?.GetComponent<EnemiCont>();
+        //if (MeSientes == null) MeSientes = GameObject.Find("Enemy")?.GetComponent<EnemiCont>();
+
+        canStealthKill = false;
+        if (currentEnemyInContact)
         {
-            _Golpe = true;
-        }
+            if (currentEnemyInContact.TeSiento == true && currentEnemyInContact.TeVeo == false)
+            {
+                canStealthKill = false;
+            }
+            if (currentEnemyInContact.TeVeo == false && currentEnemyInContact.TeSiento == false)
+            {
+                canStealthKill = true;
+            }
 
-        if (MeVes != null && MeVes.TeVeo == true){ //Pasa a combate ligero
-        
-            _Golpe = true;
+            if (currentEnemyInContact != null && currentEnemyInContact.TeVeo == true)
+            { //Pasa a combate ligero
+
+                canStealthKill = true;
+            }
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -119,8 +125,9 @@ public class PlayerController : MonoBehaviour
 
             Quaternion newRotation = Quaternion.LookRotation(lastMoveDirectionOverXZ);
             Debug.DrawRay(transform.position, lastMoveDirectionOverXZ.normalized * 5f, Color.red, 0.1f);
-            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
-            
+            //playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+
         }
 
         if(isKnocking)
@@ -128,7 +135,8 @@ public class PlayerController : MonoBehaviour
             knockBackCounter -= Time.deltaTime;
 
             float yStore = moveDirection.y;
-            moveDirection = (playerModel.transform.forward * knockbackPower.x);
+            //moveDirection = (playerModel.transform.forward * knockbackPower.x);
+            moveDirection = (transform.forward * knockbackPower.x);
             moveDirection.y = yStore;
 
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
@@ -176,5 +184,26 @@ public class PlayerController : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         hitNormal = hit.normal;
+    }
+
+    EnemiCont currentEnemyInContact = null;
+    private void OnTriggerEnter(Collider other)
+    {
+        EnemiCont enemiCont = other.GetComponent<EnemiCont>();
+
+        if (enemiCont)
+        {
+            currentEnemyInContact = enemiCont;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        EnemiCont enemiCont = other.GetComponent<EnemiCont>();
+
+        if (enemiCont)
+        {
+            currentEnemyInContact = null;
+        }
     }
 }

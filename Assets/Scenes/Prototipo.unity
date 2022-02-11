@@ -567,7 +567,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &180226219 stripped
 GameObject:
@@ -1230,6 +1230,7 @@ MonoBehaviour:
   m_Script: {fileID: 1713180782}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &598283401
 Transform:
   m_ObjectHideFlags: 19
@@ -1328,97 +1329,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e1ac0654503274ba63e9dd09b5a1df, type: 3}
---- !u!1 &692564378
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 692564381}
-  - component: {fileID: 692564380}
-  - component: {fileID: 692564379}
-  m_Layer: 0
-  m_Name: emp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &692564379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 692564378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a7245830aa031247857916d148fd3d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  jumpForce: 0
-  gravityScale: 5
-  rotateSpeed: 5
-  charController: {fileID: 0}
-  playerModel: {fileID: 0}
-  playerCamera: {fileID: 0}
-  isKnocking: 0
-  knockBackLenght: 0.5
-  knockbackPower: {x: 0, y: 0}
-  isOnSlope: 0
-  slideVelocity: 0
-  slopeForceDown: 0
-  playerPieces: []
-  stopMove: 0
-  MeVes: {fileID: 0}
-  MeSientes: {fileID: 0}
-  _Golpe: 1
-  putaso: 0
-  destruir: {fileID: 0}
---- !u!114 &692564380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 692564378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9072d4dbd6cb1944eb76c5b1b0bd7246, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolPoints: []
-  currentPatrolPoint: 0
-  agent: {fileID: 0}
-  waitAtPoint: 2
-  chaseRange: 0
-  PlayerRange: 0
-  attackRange: 1
-  timeBetweenAttacks: 2
-  TeVeo: 0
-  TeSiento: 0
-  cerca: 0
-  putasoHit: {fileID: 0}
-  _DaNo: 0
-  see: {fileID: 0}
-  currentState: 0
---- !u!4 &692564381
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 692564378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.020795, y: 1.1467164, z: 13.534626}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &694821161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2265,8 +2175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 1
-  m_FollowOffset: {x: 7.8795376, y: 6.35, z: -0.61930454}
+  m_BindingMode: 4
+  m_FollowOffset: {x: 0, y: 6.35, z: -9.57}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4444,7 +4354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881262066}
   m_LocalRotation: {x: 0.22653796, y: 0.21618305, z: -0.060609616, w: 0.9477721}
-  m_LocalPosition: {x: -3.25, y: 6.35, z: 1.8200006}
+  m_LocalPosition: {x: -2.554883, y: 6.35, z: 0.123212814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1086992463}
