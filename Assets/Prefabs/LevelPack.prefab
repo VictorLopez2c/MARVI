@@ -25,11 +25,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490285628778078116}
   m_LocalRotation: {x: -0, y: -0.71050155, z: -0, w: 0.7036956}
-  m_LocalPosition: {x: -0.4778182, y: -0.369, z: -4.384801}
+  m_LocalPosition: {x: 2.04, y: 0, z: -5.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6408752917478541100}
-  m_RootOrder: 0
+  m_Father: {fileID: 6562934598952720149}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4673655116995361233
 AudioSource:
@@ -152,11 +152,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3947433606751922883}
   m_LocalRotation: {x: -0, y: -0.71050155, z: -0, w: 0.7036956}
-  m_LocalPosition: {x: -0.4778182, y: -0.369, z: -4.384802}
+  m_LocalPosition: {x: 1.98, y: 0, z: -5.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6408752917478541100}
-  m_RootOrder: 1
+  m_Father: {fileID: 6562934598952720149}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &3495283662312516633
 AudioSource:
@@ -314,8 +314,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6320194909161957867}
-  m_LocalRotation: {x: 0.22653796, y: 0.21618305, z: -0.060609616, w: 0.9477721}
-  m_LocalPosition: {x: -3.4711895, y: 7.207844, z: -1.1747177}
+  m_LocalRotation: {x: 0.23733246, y: -0.5591025, z: 0.17104681, w: 0.7757711}
+  m_LocalPosition: {x: 9.208776, y: 5.4187136, z: -3.4127474}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8569106271152029543}
@@ -548,9 +548,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.369, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5162899538456385792}
-  - {fileID: 2639545577560351572}
+  m_Children: []
   m_Father: {fileID: 8569106271152029543}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -583,8 +581,8 @@ MonoBehaviour:
   currentHealth: 5
   maxHealth: 5
   invincibleLenght: 0.5
-  hitSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  hitSound: {fileID: 4673655116995361233}
+  deathSound: {fileID: 3495283662312516633}
 --- !u!1001 &5966445881043362935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -592,6 +590,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8569106271152029543}
     m_Modifications:
+    - target: {fileID: 307201793264942728, guid: db4f136703fac964cb0e1b3fe45e0140,
+        type: 3}
+      propertyPath: m_Name
+      value: KaylaModel
+      objectReference: {fileID: 0}
     - target: {fileID: 709643307849626464, guid: db4f136703fac964cb0e1b3fe45e0140,
         type: 3}
       propertyPath: playerCamera
@@ -610,17 +613,17 @@ PrefabInstance:
     - target: {fileID: 709643307849626466, guid: db4f136703fac964cb0e1b3fe45e0140,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 709643307849626466, guid: db4f136703fac964cb0e1b3fe45e0140,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.081
       objectReference: {fileID: 0}
     - target: {fileID: 709643307849626466, guid: db4f136703fac964cb0e1b3fe45e0140,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.57
+      value: -4.62
       objectReference: {fileID: 0}
     - target: {fileID: 709643307849626466, guid: db4f136703fac964cb0e1b3fe45e0140,
         type: 3}
@@ -655,6 +658,16 @@ PrefabInstance:
     - target: {fileID: 709643307849626466, guid: db4f136703fac964cb0e1b3fe45e0140,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940705736468943531, guid: db4f136703fac964cb0e1b3fe45e0140,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163914185909574771, guid: db4f136703fac964cb0e1b3fe45e0140,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
