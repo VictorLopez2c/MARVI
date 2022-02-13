@@ -13,10 +13,8 @@ public class HealthPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-
-
-            Destroy(gameObject);
             healthSound.Play();
+            Destroy(gameObject);
             Instantiate(healthEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
 
             if(isFullHealth)

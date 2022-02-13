@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1801035373
+--- !u!1 &7762356316240092122
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,69 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1801035374}
-  - component: {fileID: 1801035375}
+  - component: {fileID: 7762356316240092121}
+  - component: {fileID: 7762356316240092120}
+  - component: {fileID: 7762356316240092123}
+  - component: {fileID: 1187952668073669377}
+  - component: {fileID: 4278897834349787919}
   m_Layer: 0
-  m_Name: GoldSFX
+  m_Name: Gold Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1801035374
+--- !u!4 &7762356316240092121
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801035373}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09, y: -0.47126913, z: 0.15}
-  m_LocalScale: {x: 0.82678795, y: 0.82678795, z: 0.82678795}
-  m_Children: []
-  m_Father: {fileID: 7762356316240092121}
-  m_RootOrder: 1
+  m_GameObject: {fileID: 7762356316240092122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.06, y: 0.57, z: 12.78}
+  m_LocalScale: {x: 1.2095, y: 1.2095, z: 1.2095}
+  m_Children:
+  - {fileID: 7230958786693141519}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1801035375
+--- !u!135 &7762356316240092120
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762356316240092122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7762356316240092123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762356316240092122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f025a61ecd83da46bbafcf9c3cd6d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
+  goldEffect: {fileID: 135174240403246005, guid: 6398b012f10ab1a4abac848704547a27,
+    type: 3}
+  goldSound: {fileID: 1187952668073669377}
+--- !u!82 &1187952668073669377
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801035373}
+  m_GameObject: {fileID: 7762356316240092122}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -127,54 +160,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &7762356316240092122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7762356316240092121}
-  - component: {fileID: 7762356316240092120}
-  - component: {fileID: 7762356316240092123}
-  m_Layer: 0
-  m_Name: Gold Pickup
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7762356316240092121
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7762356316240092122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.06, y: 0.57, z: 12.78}
-  m_LocalScale: {x: 1.2095, y: 1.2095, z: 1.2095}
-  m_Children:
-  - {fileID: 7230958786693141519}
-  - {fileID: 1801035374}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7762356316240092120
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7762356316240092122}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7762356316240092123
+--- !u!114 &4278897834349787919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,13 +169,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7762356316240092122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f025a61ecd83da46bbafcf9c3cd6d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c62b98620af1d54eac150c33e44f942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
-  goldEffect: {fileID: 135174240403246005, guid: 6398b012f10ab1a4abac848704547a27,
-    type: 3}
-  goldSound: {fileID: 1801035375}
 --- !u!1001 &1567749591522607020
 PrefabInstance:
   m_ObjectHideFlags: 0

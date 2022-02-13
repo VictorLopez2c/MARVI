@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,13 +10,27 @@ public class MainMenu : MonoBehaviour
 
 
     public GameObject optionsScreen;
+    public GameObject creditsScreen;
+    public GameObject Menu;
+    public GameObject Buttons;
+    public GameObject AnimationOptions;
 
-    
+    public AudioSource BasicFX;
+    public AudioSource StoneLow;
+
+
+
+
+    void Start()
+    {
+        Cursor.visible = true;
+    }
 
 
     public void Play()
     {
-        SceneManager.LoadScene(Level);
+        BasicFX.Play();
+        SceneManager.LoadScene(2);
         Time.timeScale = 1f;
 
     }
@@ -23,15 +38,57 @@ public class MainMenu : MonoBehaviour
    public void Options()
     {
         optionsScreen.SetActive(true);
+        Buttons.SetActive(false);
+        BasicFX.Play();
+    }
+    public void Options2()
+    {
+        optionsScreen.SetActive(true);
+        Buttons.SetActive(false);
+        AnimationOptions.SetActive(false);
+        BasicFX.Play();
+    }
+
+    public void Credits()
+    {
+        creditsScreen.SetActive(true);
+        Menu.SetActive(false);
+        AnimationOptions.SetActive(false);
+        BasicFX.Play();
     }
 
     public void CloseOptions()
     {
         optionsScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        Menu.SetActive(true);
+        Buttons.SetActive(true);
+        BasicFX.Play();
+        StoneLow.Play();
+    }
+
+    public void CloseCredits()
+    {
+        optionsScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        Menu.SetActive(true);
+        Buttons.SetActive(true);
+        BasicFX.Play();
     }
 
     public void Quitgame()
     {
-       Application.Quit();
+        BasicFX.Play();
+        Application.Quit();
+        
+    }
+
+    public void ScreenReturn()
+    {
+
+        
+        AnimationCanvas.instance.tiempoOn();
+        BasicFX.Play();
+
     }
 }
