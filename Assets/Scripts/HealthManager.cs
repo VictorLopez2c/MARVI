@@ -14,6 +14,7 @@ public class HealthManager : MonoBehaviour
 
     public AudioSource hitSound;
     public AudioSource deathSound;
+
     private void Awake()
     {
         instance = this;
@@ -23,20 +24,21 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         ResetHealth();
+        UIManager.instance.hurtImage.enabled = false;//Hurt IMG- Canvas Disabled
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(invincCounter > 0)
+        if (invincCounter > 0)
         {
             invincCounter -= Time.deltaTime;
 
 
-            for(int i = 0; i < PlayerController.instance.playerPieces.Length; i++)
+            for (int i = 0; i < PlayerController.instance.playerPieces.Length; i++)
             {
-                if(Mathf.Floor(invincCounter * 5f) % 2 == 0)
+                if (Mathf.Floor(invincCounter * 5f) % 2 == 0)
                 {
                     PlayerController.instance.playerPieces[i].SetActive(true);
                 }
@@ -53,9 +55,10 @@ public class HealthManager : MonoBehaviour
         }
     }
 
+
     public void Hurt()
     {
-        if(invincCounter <= 0)
+        if (invincCounter <= 0)
         {
             currentHealth--;
 
@@ -67,6 +70,7 @@ public class HealthManager : MonoBehaviour
             }
             else
             {
+                StartCoroutine(HurtImageCanvas());//Hurt IMG- Canvas Effect
                 PlayerController.instance.Knockback();
                 invincCounter = invincibleLenght;
                 hitSound.Play();
@@ -97,6 +101,24 @@ public class HealthManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        UIManager.instance.healthText.text = currentHealth.ToString();
+        if (UIManager.instance.healthText != null)
+        {
+            UIManager.instance.healthText.text = currentHealth.ToString();
+        }
+        CircleHealtBar();//Apply Healt Bar - Canvas Effect
+
+    }
+
+    void CircleHealtBar()//Circle Healt Bar - Canvas Effect
+    {
+        float helathPercentage = (float)currentHealth / (float)maxHealth;//HelathPercentage of currentHealt
+        UIManager.instance.healthImage.fillAmount = helathPercentage;
+    }
+
+    private IEnumerator HurtImageCanvas()
+    {
+        UIManager.instance.hurtImage.enabled = !UIManager.instance.hurtImage.enabled;//first code executed 
+        yield return new WaitForSeconds(0.5f); //code DELAY
+        UIManager.instance.hurtImage.enabled = !UIManager.instance.hurtImage.enabled;//code resumes after DELAY and exits if there is nothing else to run
     }
 }

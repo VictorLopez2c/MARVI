@@ -87,8 +87,8 @@ public class MainMenu : MonoBehaviour
     {
 
         
-        AnimationCanvas.instance.tiempoOn();
-        BasicFX.Play();
+        //AnimationCanvas.instance.tiempoOn();
+        //BasicFX.Play();
 
     }
 }

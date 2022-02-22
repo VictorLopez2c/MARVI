@@ -14,20 +14,20 @@ public class VisionEnemiga : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(Collider other)
-    {
-        if (rango != null) rango = GameObject.Find("Enemy").GetComponent<EnemiCont>();
+    //void Update(Collider other)
+    //{
+    //    if (rango != null) rango = GameObject.Find("Enemy").GetComponent<EnemiCont>();
 
-        if (rango.cerca == false)
-        {
-            vision = false;
-        }
-        if (other.tag == "Player")
-        {
-            vision = true;
-        }
+    //    if (rango.cerca == false)
+    //    {
+    //        vision = false;
+    //    }
+    //    if (other.tag == "Player")
+    //    {
+    //        vision = true;
+    //    }
 
-    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
