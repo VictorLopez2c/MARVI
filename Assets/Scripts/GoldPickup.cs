@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GoldPickup : MonoBehaviour
 {
@@ -11,9 +13,10 @@ public class GoldPickup : MonoBehaviour
 
     public AudioSource goldSound;
 
+
     void Start()
     {
-        
+        UIManager.instance.goldImage.enabled = false;//PickUp IMG- Canvas Disabled
     }
 
     
@@ -22,16 +25,27 @@ public class GoldPickup : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-
+            gameObject.GetComponentInChildren<Renderer>().enabled = false;
+            StartCoroutine(GoldImageCnv());
+            //UIManager.instance.goldImage.enabled = !UIManager.instance.goldImage.enabled;
             GameManager.instance.AddGold(value);
             goldSound.Play();
-
-            Destroy(gameObject);
             Instantiate(goldEffect, transform.position, transform.rotation);
+            
         }
     }
+    private IEnumerator GoldImageCnv() 
+    {
+        UIManager.instance.goldImage.enabled = !UIManager.instance.goldImage.enabled;
+        yield return new WaitForSeconds(0.5f); 
+        UIManager.instance.goldImage.enabled = !UIManager.instance.goldImage.enabled;
+        Destroy(gameObject);
+    }
+   
+
 }
