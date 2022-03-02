@@ -7,8 +7,6 @@ TagManager:
   - MovingPlatform
   - Damage
   - PlayerInteractionZone
-  - Ground
-  - Enemy
   layers:
   - Default
   - TransparentFX

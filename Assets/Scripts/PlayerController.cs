@@ -34,12 +34,6 @@ public class PlayerController : MonoBehaviour
 
     public bool stopMove;
 
-
-    public bool AttackArea = false;
-
-    public int poo = 0;
-
-
     //public MeVes;
     //public EnemiCont MeSientes;
     public bool canStealthKill = false; //variable para definir ataque ligero(true) o ataque mortal(false)
@@ -64,6 +58,7 @@ public class PlayerController : MonoBehaviour
 
     public void Update()
     {
+
         //if (MeVes == null) MeVes = GameObject.Find("Enemy")?.GetComponent<EnemiCont>();
         //if (MeSientes == null) MeSientes = GameObject.Find("Enemy")?.GetComponent<EnemiCont>();
 
@@ -90,11 +85,6 @@ public class PlayerController : MonoBehaviour
         {
             putaso = true;
             //aqui ejecutar animacion de ataque
-            if(currentEnemyInContact)
-            {
-                poo = poo + 1;
-                //currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
-            }
         }
             if (!isKnocking && !stopMove)
         {
@@ -200,32 +190,21 @@ public class PlayerController : MonoBehaviour
     EnemiCont currentEnemyInContact = null;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
-        {
-            EnemiCont enemiCont = other.GetComponentInParent<EnemiCont>();
+        EnemiCont enemiCont = other.GetComponent<EnemiCont>();
 
-            if (enemiCont)
-            {
-                currentEnemyInContact = enemiCont;
-            }
+        if (enemiCont)
+        {
+            currentEnemyInContact = enemiCont;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        EnemiCont enemiCont = other.GetComponent<EnemiCont>();
+
+        if (enemiCont)
         {
-            EnemiCont enemiCont = other.GetComponentInParent<EnemiCont>();
-
-            if (enemiCont)
-            {
-                currentEnemyInContact = null;
-            }
+            currentEnemyInContact = null;
         }
-    }
-
-     public void Area()
-    {
-        AttackArea = true;
     }
 }
