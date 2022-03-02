@@ -5,7 +5,6 @@ using UnityEngine;
 public class HurtPlayer : MonoBehaviour
 {
 
-
  
     public GameObject HitEffect;
 
@@ -17,7 +16,6 @@ public class HurtPlayer : MonoBehaviour
         {
             HealthManager.instance.Hurt();
             Instantiate(HitEffect,transform.position, transform.rotation);
-
         }
     }
 
