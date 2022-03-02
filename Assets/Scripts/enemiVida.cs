@@ -4,30 +4,64 @@ using UnityEngine;
 
 public class enemiVida : MonoBehaviour
 {
+    public static enemiVida instance;
+
     public int maxHealth = 1;
-    private int currentHealth;
+    public int currentHealth;
 
-    public int deathSound;
+    //public int deathSound;
+    public int fun = 0;
+    public bool Attacking = false;
 
-    public GameObject deathEffect, itemDrop;
+    //public GameObject deathEffect, itemDrop;
+    
+
 
     void Start()
     {
         currentHealth = maxHealth;
     }
-
-    public void TakeDamage()
+    void Update()
     {
-        currentHealth--;
-        if (currentHealth <= 0)
+        
+    }
+    public void EnemyAttacking()
+    {
+        Attacking = true;
+    }
+
+    public void EnemyPatrolling()
+    {
+        Attacking = false;
+    }
+
+    public void EnemyTakeDamage()
+    {
+        if (Attacking == false)
         {
+            currentHealth = 0;
             //AudioManager.instance.PlaySFX(deathSound);
             Destroy(gameObject);
 
-            Instantiate(deathEffect, transform.position, transform.rotation);
-            Instantiate(itemDrop, transform.position, transform.rotation);
+            //Instantiate(deathEffect, transform.position, transform.rotation);
+            //Instantiate(itemDrop, transform.position, transform.rotation);
+        }
+        if (Attacking == true)
+        {
+            currentHealth = currentHealth - 1;
+            fun = fun + 1;
+            if (currentHealth <= 0)
+            {
+                //AudioManager.instance.PlaySFX(deathSound);
+                Destroy(gameObject);
+
+                //Instantiate(deathEffect, transform.position, transform.rotation);
+                //Instantiate(itemDrop, transform.position, transform.rotation);
+            }
         }
 
         //PlayerController.instance.Bounce();
     }
+
+
 }
