@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
 
     public Text healthText;
     public Image healthImage;
+    public Image hurtImage;
 
     public Text goldText;
     public Image goldImage;

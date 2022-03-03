@@ -23,6 +23,7 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         ResetHealth();
+        UIManager.instance.hurtImage.enabled = false;//Hurt IMG- Canvas Disabled
 
     }
 
@@ -67,6 +68,7 @@ public class HealthManager : MonoBehaviour
             }
             else
             {
+                StartCoroutine(HurtImageCanvas());//Hurt IMG- Canvas Effect
                 PlayerController.instance.Knockback();
                 invincCounter = invincibleLenght;
                 hitSound.Play();
@@ -97,6 +99,24 @@ public class HealthManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        UIManager.instance.healthText.text = currentHealth.ToString();
+        if (UIManager.instance.healthText != null)
+        {
+            UIManager.instance.healthText.text = currentHealth.ToString();
+        }
+        CircleHealtBar();//Apply Healt Bar - Canvas Effect
+
+    }
+
+    void CircleHealtBar()//Circle Healt Bar - Canvas Effect
+    {
+        float helathPercentage = (float)currentHealth / (float)maxHealth;//HelathPercentage of currentHealt
+        UIManager.instance.healthImage.fillAmount = helathPercentage;
+    }
+
+    private IEnumerator HurtImageCanvas()
+    {
+        UIManager.instance.hurtImage.enabled = !UIManager.instance.hurtImage.enabled;//first code executed 
+        yield return new WaitForSeconds(0.5f); //code DELAY
+        UIManager.instance.hurtImage.enabled = !UIManager.instance.hurtImage.enabled;//code resumes after DELAY and exits if there is nothing else to run
     }
 }
