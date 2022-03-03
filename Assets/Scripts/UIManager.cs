@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Animations;
 
 public class UIManager : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class UIManager : MonoBehaviour
     public GameObject Sound;
     public GameObject AnimScreen;
     public GameObject AnimSound;
+    public GameObject Collect;
+
+    public Animator loked;
 
     public string Main;
 
@@ -39,6 +43,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
+        loked = GetComponent<Animator>();
     }
 
     void Update()
@@ -113,6 +118,20 @@ public class UIManager : MonoBehaviour
 
         AnimSound.SetActive(false);
         AnimScreen.SetActive(false);
+
+        loked.SetBool("Change", false);
+    }
+    public void Coleccionables()
+    {
+        Collect.SetActive(true);
+        MainButtons.SetActive(false);
+
+    }
+    
+    public void Bloqueado()
+    {
+        loked.SetBool("Change", false);
+        loked.SetBool("Change", true);
     }
 
     public void MainMenu()

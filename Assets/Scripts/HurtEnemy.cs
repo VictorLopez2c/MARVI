@@ -7,13 +7,11 @@ public class HurtEnemy : MonoBehaviour
     public int funciona = 0;
     public int pen = 0;
 
-
+    //
     public void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            
-
             if (currentEnemyInContact)
             {
                 currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
