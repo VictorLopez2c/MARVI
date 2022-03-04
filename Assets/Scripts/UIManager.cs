@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
     public GameObject AnimScreen;
     public GameObject AnimSound;
     public GameObject Collect;
+    public GameObject Interrogante;
 
     public Animator loked;
 
@@ -43,7 +44,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
-        loked = GetComponent<Animator>();
+        //loked = GetComponent<Animator>();
     }
 
     void Update()
@@ -119,7 +120,7 @@ public class UIManager : MonoBehaviour
         AnimSound.SetActive(false);
         AnimScreen.SetActive(false);
 
-        loked.SetBool("Change", false);
+        loked.SetBool("Change", true);
     }
     public void Coleccionables()
     {
@@ -130,8 +131,10 @@ public class UIManager : MonoBehaviour
     
     public void Bloqueado()
     {
-        loked.SetBool("Change", false);
-        loked.SetBool("Change", true);
+        Interrogante.SetActive(true);
+        loked.SetTrigger("Click");
+        //loked.SetBool("Change", true);
+       //loked.SetBool("Change", false);
     }
 
     public void MainMenu()
