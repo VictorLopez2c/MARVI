@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
     public GameObject Interrogante;
 
     public Animator loked;
+    public Animator ImgMenu;
+    public Animator BarraMenu;
 
     public string Main;
 
@@ -125,7 +127,9 @@ public class UIManager : MonoBehaviour
     public void Coleccionables()
     {
         Collect.SetActive(true);
+        BarraMenu.SetBool("Barra", true);
         MainButtons.SetActive(false);
+        ImgMenu.SetBool("Collectibles", true);
 
     }
     
@@ -135,6 +139,12 @@ public class UIManager : MonoBehaviour
         loked.SetTrigger("Click");
         //loked.SetBool("Change", true);
        //loked.SetBool("Change", false);
+    }
+
+    public void CloseCollect()
+    {
+        ImgMenu.SetBool("Collectibles", false);
+        BarraMenu.SetBool("Barra", false);
     }
 
     public void MainMenu()
