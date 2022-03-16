@@ -196,7 +196,7 @@ public class EnemiCont : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -206,6 +206,6 @@ public class EnemiCont : MonoBehaviour
             //Destroy(gameObject);
 
         }
-    }
+    }*/
 }
 

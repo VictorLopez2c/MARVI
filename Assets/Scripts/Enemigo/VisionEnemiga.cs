@@ -18,21 +18,6 @@ public class VisionEnemiga : MonoBehaviour
     // Update is called once per frame
     void Update(Collider other)
     {
-        if (vision == true)
-        {
-            if (currentEnemyInContact)
-            {
-                currentEnemyInContact.GetComponent<enemiVida>().EnemyAttacking();
-            }
-        }
-
-        if(vision == false)
-        {
-            if (currentEnemyInContact)
-            {
-                currentEnemyInContact.GetComponent<enemiVida>().EnemyPatrolling();
-            }
-        }
 
         if (rango != null) rango = GameObject.Find("Enemy").GetComponent<EnemiCont>();
 
@@ -44,17 +29,17 @@ public class VisionEnemiga : MonoBehaviour
         {
             vision = true;
         }
-
-
-
     }
+
+
+    PlayerController currentEnemyInContact = null;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             antonio = 1;
-            EnemiCont enemiCont = other.GetComponentInParent<EnemiCont>();
+            PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
 
             if (enemiCont)
             {
@@ -68,7 +53,7 @@ public class VisionEnemiga : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            EnemiCont enemiCont = other.GetComponentInParent<EnemiCont>();
+            PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
 
             if (enemiCont)
             {
@@ -78,19 +63,60 @@ public class VisionEnemiga : MonoBehaviour
         }
     }
 
-    /*public void Update()
+    public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
-
             if (currentEnemyInContact)
             {
-                currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
+                currentEnemyInContact.GetComponent<enemiVida>().EnemyAttacking();
+            }
+        }*/
+
+        if (vision == true)
+        {
+            if (currentEnemyInContact)
+            {
+                currentEnemyInContact.GetComponent<enemiVida>().EnemyAttacking();
+            }
+        }
+
+        if (vision == false)
+        {
+            if (currentEnemyInContact)
+            {
+                currentEnemyInContact.GetComponent<enemiVida>().EnemyPatrolling();
+            }
+        }
+    }
+
+
+
+   /* private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
+
+            if (enemiCont)
+            {
+                currentEnemyInContact = enemiCont;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
+
+            if (enemiCont)
+            {
+                currentEnemyInContact = null;
             }
         }
     }*/
-
-    EnemiCont currentEnemyInContact = null;
 
     /*private void OnTriggerEnter(Collider other)
     {
