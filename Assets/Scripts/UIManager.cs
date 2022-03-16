@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Animations;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseScreen, optionsScreen;
 
     public GameObject MainButtons;
+    public GameObject ButtonsFake;
     public GameObject Screen;
     public GameObject Sound;
     public GameObject AnimScreen;
@@ -130,6 +132,7 @@ public class UIManager : MonoBehaviour
         BarraMenu.SetBool("Barra", true);
         MainButtons.SetActive(false);
         ImgMenu.SetBool("Collectibles", true);
+        BarraMenu.SetBool("salida", false);
 
     }
     
@@ -145,7 +148,20 @@ public class UIManager : MonoBehaviour
     {
         ImgMenu.SetBool("Collectibles", false);
         BarraMenu.SetBool("Barra", false);
+        BarraMenu.SetBool("salida", true);
+        ButtonsFake.SetActive(true);
+        StartCoroutine("WaitMenu");
+
     }
+
+    IEnumerator WaitMenu()
+    {
+        yield return new WaitForSeconds (3);
+        ButtonsFake.SetActive(false);
+        MainButtons.SetActive(true);
+        Debug.Log("VictorChupaPinga");
+    }
+
 
     public void MainMenu()
     {

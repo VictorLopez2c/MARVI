@@ -6,7 +6,7 @@ public class AudioSettings : MonoBehaviour
 {
     public static AudioSettings audioSettings;
 
-    [Header("Information - Read Only from inspector")]
+    //[Header("Information - Read Only from inspector")]
     [SerializeField]
     private float musicVolume;
     [SerializeField]
@@ -16,8 +16,8 @@ public class AudioSettings : MonoBehaviour
     float sfxDefaultVolume = 0.9f;
     public GameObject FxBase;
 
-    string musicAudioSourcesTag ="Music-AudioSource";
-    string sfxAudioSourcesTag="SFX-AudioSource";
+    //string musicAudioSourcesTag ="Music-AudioSource";
+    //string sfxAudioSourcesTag="SFX-AudioSource";
 
     string musicVolumeDataName = "music-volume";
     string sfxVolumeDataName = "sfx-volume";
