@@ -16,7 +16,7 @@ public class VisionEnemiga : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update(Collider other)
+    void Update(Collider other)
     {
 
         if (rango != null) rango = GameObject.Find("Enemy").GetComponent<EnemiCont>();
@@ -25,32 +25,80 @@ public class VisionEnemiga : MonoBehaviour
         {
             vision = false;
         }
-
-        if (currentEnemyInContact)
-        {
-            currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
-        }
-
         if (other.tag == "Player")
         {
             vision = true;
         }
     }
 
-    EnemiCont currentEnemyInContact = null;
+
+    enemiVida currentEnemyInContact = null;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag=="Player")
         {
             antonio = 1;
+            enemiVida enemiCont = other.GetComponentInParent<enemiVida>();
+
+                
+
 
             vision = true;
+            currentEnemyInContact.GetComponent<enemiVida>().EnemyAttacking();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag=="Player")
+        {
+            enemiVida enemiCont = other.GetComponentInParent<enemiVida>();
+
+            currentEnemyInContact = enemiCont;
+            if (enemiCont)
+            {
+                currentEnemyInContact = null;
+            }
+
+            vision = false;
+            currentEnemyInContact.GetComponent<enemiVida>().EnemyPatrolling();
+        }
+    }
+
+    public void Update()
+    {
+        /*if (Input.GetMouseButtonDown(0))
+        {
+            if (currentEnemyInContact)
+            {
+                currentEnemyInContact.GetComponent<enemiVida>().EnemyAttacking();
+            }
+        }*/
+
+        if (vision == true)
+        {
+            if (currentEnemyInContact)
+            {
+                
+            }
         }
 
+        if (vision == false)
+        {
+            if (currentEnemyInContact)
+            {
+                
+            }
+        }
+    }
+
+
+
+   /* private void OnTriggerEnter(Collider other)
+    {
         if (other.CompareTag("Player"))
         {
-            EnemiCont enemiCont = GetComponentInParent<EnemiCont>();
+            PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
 
             if (enemiCont)
             {
@@ -58,51 +106,19 @@ public class VisionEnemiga : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag=="Player")
-        {
-            vision = false;
-        }
         if (other.CompareTag("Player"))
         {
-            EnemiCont enemiCont = GetComponentInParent<EnemiCont>();
+            PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
 
             if (enemiCont)
             {
                 currentEnemyInContact = null;
             }
         }
-    }
-    /// <summary>
-    /// //////////////////////////////////////////////////////////////////////////////////
-    /// </summary>
-
-    /* private void OnTriggerEnter(Collider other)
-     {
-         if (other.CompareTag("Player"))
-         {
-             PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
-
-             if (enemiCont)
-             {
-                 currentEnemyInContact = enemiCont;
-             }
-         }
-     }
-
-     private void OnTriggerExit(Collider other)
-     {
-         if (other.CompareTag("Player"))
-         {
-             PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
-
-             if (enemiCont)
-             {
-                 currentEnemyInContact = null;
-             }
-         }
-     }*/
+    }*/
 
     /*private void OnTriggerEnter(Collider other)
     {
