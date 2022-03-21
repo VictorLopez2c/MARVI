@@ -5736,6 +5736,12 @@ MonoBehaviour:
   ImgMenu: {fileID: 0}
   BarraMenu: {fileID: 0}
   Main: 
+--- !u!95 &800560785 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6384261210943966450, guid: 382ab1fefcc37d44f859462edde09acc,
+    type: 3}
+  m_PrefabInstance: {fileID: 443076933371939355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &807178405
 GameObject:
   m_ObjectHideFlags: 0
@@ -18168,6 +18174,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 512831389}
     m_Modifications:
+    - target: {fileID: 3681020405393327812, guid: 382ab1fefcc37d44f859462edde09acc,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 800560785}
     - target: {fileID: 3681020405449966349, guid: 382ab1fefcc37d44f859462edde09acc,
         type: 3}
       propertyPath: m_RootOrder
@@ -18228,6 +18239,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alux1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6384261210943966450, guid: 382ab1fefcc37d44f859462edde09acc,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70030ee5a7176634da31e04769d8a9f1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 382ab1fefcc37d44f859462edde09acc, type: 3}
 --- !u!33 &456536521399426330

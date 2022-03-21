@@ -25,6 +25,7 @@ public class EnemiCont : MonoBehaviour
     public bool TeSiento = false;
     public bool cerca = false;
 
+    public Animator animator;
     //public PlayerController variable correr;
 
 
