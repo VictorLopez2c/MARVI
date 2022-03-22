@@ -9,7 +9,6 @@ public class EnemiCont : MonoBehaviour
 
     public UnityEngine.AI.NavMeshAgent agent;
 
-    //public Animator animator;
 
     public float waitAtPoint = 2f;
     private float waitCounter;
@@ -79,7 +78,7 @@ public class EnemiCont : MonoBehaviour
         switch (currentState)
         {
             case AIState.Idle:
-                //animator.SetBool("IsMoving", false);
+                animator.SetBool("IsMoving", false);
                 cerca = false;
                 TeVeo = false;
 
@@ -96,7 +95,7 @@ public class EnemiCont : MonoBehaviour
                 if (see.vision == true)
                 {
                     currentState = AIState.Chasing;
-                    //animator.SetBool("IsMoving", true);
+                    animator.SetBool("IsMoving", true);
                     cerca = true;
                     TeVeo = true;
                 }
@@ -134,7 +133,7 @@ public class EnemiCont : MonoBehaviour
                     currentState = AIState.Chasing;
                 }*/
 
-                // animator.SetBool("IsMoving", true);
+                 animator.SetBool("IsMoving", true);
 
                 break;
 
@@ -147,7 +146,7 @@ public class EnemiCont : MonoBehaviour
                 {
                     currentState = AIState.Attacking;
                     //animator.SetTrigger("Attack");
-                    //animator.SetBool("IsMoving", false);
+                    animator.SetBool("IsMoving", false);
 
                     agent.velocity = Vector3.zero;
                     agent.isStopped = true;
