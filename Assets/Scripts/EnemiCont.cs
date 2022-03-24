@@ -79,6 +79,7 @@ public class EnemiCont : MonoBehaviour
         {
             case AIState.Idle:
                 animator.SetBool("IsMoving", false);
+                animator.SetBool("IsChasing", false);
                 cerca = false;
                 TeVeo = false;
 
@@ -105,6 +106,7 @@ public class EnemiCont : MonoBehaviour
             case AIState.Patrolling:
 
                 //agent.SetDestination(patrolPoints[currentPatrolPoint].position);
+                agent.speed = 1;
 
                 if (agent.remainingDistance <= .2f)
                 {
@@ -140,13 +142,15 @@ public class EnemiCont : MonoBehaviour
             case AIState.Chasing:
 
                 agent.SetDestination(PlayerController.instance.transform.position);
-
+                agent.speed = 4;
+                animator.SetBool("IsChasing", true);
 
                 if (distanceToPlayer <= attackRange) // para hacer un rango (distanceToPlayer < attackRange)
                 {
                     currentState = AIState.Attacking;
                     //animator.SetTrigger("Attack");
                     animator.SetBool("IsMoving", false);
+                    animator.SetBool("IsChasing", false);
 
                     agent.velocity = Vector3.zero;
                     agent.isStopped = true;

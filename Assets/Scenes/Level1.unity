@@ -2391,7 +2391,7 @@ PrefabInstance:
     - target: {fileID: 5489309415768163083, guid: 46c03d20d016d7745867055514253758,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.93
+      value: 4.9
       objectReference: {fileID: 0}
     - target: {fileID: 5489309415768163083, guid: 46c03d20d016d7745867055514253758,
         type: 3}
@@ -18568,7 +18568,7 @@ PrefabInstance:
     - target: {fileID: 3681020405393327811, guid: 382ab1fefcc37d44f859462edde09acc,
         type: 3}
       propertyPath: m_Speed
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3681020405393327812, guid: 382ab1fefcc37d44f859462edde09acc,
         type: 3}
@@ -24716,6 +24716,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_ActionsAsset: {fileID: 0}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: 0}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!1 &5049603066397490746
 GameObject:
   m_ObjectHideFlags: 0
@@ -32247,7 +32262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5049603067723392125
 RectTransform:
   m_ObjectHideFlags: 0
