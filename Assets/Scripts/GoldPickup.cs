@@ -7,6 +7,8 @@ public class GoldPickup : MonoBehaviour
 {
 
     public int value;
+	public int Oro;
+
 
     public GameObject goldEffect;
 
@@ -84,7 +86,7 @@ public class GoldPickup : MonoBehaviour
             }
             if( Oro == 1)
             {
-                Oro
+				
             }
 
         }
