@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection;
 
     public CharacterController charController;
-    
+    public Animator animator;
     public GameObject playerModel;
     public Camera playerCamera;
 
