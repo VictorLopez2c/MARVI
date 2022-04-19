@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 361685233907174894}
   - component: {fileID: 3651061781201519179}
   - component: {fileID: 1535685766176667265}
-  - component: {fileID: 2584811434315441081}
+  - component: {fileID: 4473752971273617650}
+  - component: {fileID: 321570798583659640}
   m_Layer: 0
   m_Name: HouseA_LP
   m_TagString: Untagged
@@ -83,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2584811434315441081
-CapsuleCollider:
+--- !u!64 &4473752971273617650
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -93,7 +94,20 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.61102486
-  m_Height: 1.9993262
-  m_Direction: 2
-  m_Center: {x: 0.008150656, y: -0.019953992, z: 0.98969644}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4018923108312465758, guid: ae157a988207c7b42be4db63d31c45af, type: 3}
+--- !u!65 &321570798583659640
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031085039174735700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39364046, y: 0.6564969, z: 0.71630764}
+  m_Center: {x: 0.034587417, y: -0.08856932, z: 0.35815397}

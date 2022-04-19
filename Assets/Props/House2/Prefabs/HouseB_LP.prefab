@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 4807443038053001647}
   - component: {fileID: 8437683488833791498}
   - component: {fileID: 5979754616710828736}
+  - component: {fileID: 7794899951883093470}
+  - component: {fileID: 1293609956728743185}
+  - component: {fileID: 4674781276535358317}
+  - component: {fileID: 8444041433709658481}
   m_Layer: 0
   m_Name: HouseB_LP
   m_TagString: Untagged
@@ -82,3 +86,56 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7794899951883093470
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331320040193176341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 458433370814715639, guid: cea96ed4b7055e64e9084e74e873d22a, type: 3}
+--- !u!65 &1293609956728743185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331320040193176341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.6597793, y: 1.5139992, z: 0.76218927}
+  m_Center: {x: 0.22908372, y: -0.0043110847, z: 0.3705971}
+--- !u!65 &4674781276535358317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331320040193176341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.48086846, y: 0.24388434, z: 0.74611664}
+  m_Center: {x: 0.4847536, y: -0.9151314, z: 0.36256063}
+--- !u!65 &8444041433709658481
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331320040193176341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.48086846, y: 0.49509028, z: 0.7543029}
+  m_Center: {x: 0.48475578, y: 0.64417565, z: 0.3666546}
