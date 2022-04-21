@@ -6,6 +6,8 @@ public class HurtEnemy : MonoBehaviour
 {
     public int funciona = 0;
     public int pen = 0;
+    public GameObject Tranform;
+    public Transform Position;
 
     //
     public void Update()
@@ -15,6 +17,8 @@ public class HurtEnemy : MonoBehaviour
             if (currentEnemyInContact)
             {
                 currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
+                Tranform.GetComponent<Stealth_KillBehaviour>().StealthTakeDown();
+                Position = currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
             }
         }
     }

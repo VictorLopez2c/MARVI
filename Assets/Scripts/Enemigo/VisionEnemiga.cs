@@ -28,7 +28,7 @@ public class VisionEnemiga : MonoBehaviour
 
         if (currentEnemyInContact)
         {
-            currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
+            currentEnemyInContact.GetComponent<enemiVida>().EnemyAttacking();
         }
 
         if (other.tag == "Player")

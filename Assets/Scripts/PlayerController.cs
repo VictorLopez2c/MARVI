@@ -228,4 +228,24 @@ public class PlayerController : MonoBehaviour
     {
         AttackArea = true;
     }
+
+    /*public void StealthTakeDown()
+    {
+
+        //! change the position and rotation of the player
+        this.transform.position = KillPosition.position;
+        this.transform.rotation = KillPosition.rotation;
+
+        //! checking  if the position and rotation of the player is change it;
+        if (this.transform.position == KillPosition.position && this.transform.rotation == KillPosition.rotation)
+        {
+
+            //! playe animation Kill
+            anim.SetTrigger("Kill");
+            _Enemy.SetParent();
+
+            //! start the coroutine 
+            StartCoroutine(EndKillStealth());
+        }
+    }*/
 }
