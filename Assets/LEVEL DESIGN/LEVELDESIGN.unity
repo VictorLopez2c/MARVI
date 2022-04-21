@@ -109,7 +109,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 54.4
     agentClimb: 0.7
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -123,7 +123,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: b18c3130aa161ba48a3e9ed442253097, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 78a978a2f62957145b188ef37aff0658, type: 2}
 --- !u!1 &117037
 GameObject:
   m_ObjectHideFlags: 0
@@ -23694,7 +23694,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7775229, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -29333,6 +29333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tienda-A_LP
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6f5bfc715028774b9db5f0699c813a9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6f5bfc715028774b9db5f0699c813a9, type: 3}
 --- !u!1 &1170799576
@@ -34070,6 +34075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HouseA_LP (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1031085039174735700, guid: 4b8865361d7defb47be005ecf68bd803,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b8865361d7defb47be005ecf68bd803, type: 3}
 --- !u!4 &1358354685 stripped
@@ -35400,6 +35410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HouseB_LP (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331320040193176341, guid: 73df43cc3e8f63f489df34fa9072060e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73df43cc3e8f63f489df34fa9072060e, type: 3}
@@ -41444,6 +41459,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tienda-B_LP
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f48d4f37bdb27884199883118c240ff3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f48d4f37bdb27884199883118c240ff3, type: 3}
 --- !u!1001 &1637936786
@@ -46090,7 +46110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800274657}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -8.087, y: 2.82, z: -1.1019998}
+  m_LocalPosition: {x: -8.087, y: 2.6, z: -1.1019998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6259570228926109727}
@@ -74008,6 +74028,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farm_LP
       objectReference: {fileID: 0}
+    - target: {fileID: 1788369869300404576, guid: fc83540cb6444864b8cf7ab52cefac5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc83540cb6444864b8cf7ab52cefac5e, type: 3}
 --- !u!33 &6256125908222636849
@@ -75607,6 +75632,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HouseB_LP
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331320040193176341, guid: 73df43cc3e8f63f489df34fa9072060e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73df43cc3e8f63f489df34fa9072060e, type: 3}
@@ -77283,6 +77313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HouseA_LP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1031085039174735700, guid: 4b8865361d7defb47be005ecf68bd803,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b8865361d7defb47be005ecf68bd803, type: 3}
