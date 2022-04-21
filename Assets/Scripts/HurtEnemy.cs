@@ -9,6 +9,7 @@ public class HurtEnemy : MonoBehaviour
     public GameObject Tranform;
     public Transform Position;
 
+
     //
     public void Update()
     {
@@ -18,7 +19,7 @@ public class HurtEnemy : MonoBehaviour
             {
                 currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
                 Tranform.GetComponent<Stealth_KillBehaviour>().StealthTakeDown();
-                Position = currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
+                //Position = currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
             }
         }
     }

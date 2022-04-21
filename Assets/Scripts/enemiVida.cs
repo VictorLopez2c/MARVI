@@ -12,6 +12,7 @@ public class enemiVida : MonoBehaviour
     //public int deathSound;
     public int fun = 0;
     public bool Attacking = false;
+    public Animator animator;
 
     //public GameObject deathEffect, itemDrop;
     
@@ -50,6 +51,9 @@ public class enemiVida : MonoBehaviour
         {
             currentHealth = currentHealth - 1;
             fun = fun + 1;
+            //animator.SetTrigger("GetHit");
+            animator.SetBool("GetHit", false);
+
             if (currentHealth <= 0)
             {
                 //AudioManager.instance.PlaySFX(deathSound);

@@ -10643,7 +10643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc24ee45b28066459de0352ffcc06c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 800560785}
   killPosition: {fileID: 2098510170}
   Choking: {fileID: 0}
   Bodydrop: {fileID: 0}
@@ -12777,6 +12777,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   funciona: 0
   pen: 0
+  Tranform: {fileID: 0}
+  Position: {fileID: 0}
 --- !u!65 &1534386120
 BoxCollider:
   m_ObjectHideFlags: 0
