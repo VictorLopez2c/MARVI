@@ -118,11 +118,11 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: QuickRigCharacter_Hips
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 65a5180a7f2fb5747b7533053bfbf76d,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 820631f65b5d7434fb9edd906f25a104,
     type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
