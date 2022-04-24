@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +6,11 @@ public class PlayerController : MonoBehaviour
 {
 
     public static PlayerController instance;
-    
+
+    public bool Still;
     public float moveSpeed;
     public float jumpForce;
+    public bool pepino = false;
     public float gravityScale = 5f;
 
     public float rotateSpeed = 5f;
@@ -40,6 +42,9 @@ public class PlayerController : MonoBehaviour
     public int poo = 0;
 
 
+
+
+
     //public MeVes;
     //public EnemiCont MeSientes;
     public bool canStealthKill = false; //variable para definir ataque ligero(true) o ataque mortal(false)
@@ -58,14 +63,52 @@ public class PlayerController : MonoBehaviour
         charController = GetComponent<CharacterController>();
         //MeVes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
         //MeSientes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
+        
     }
 
-    Vector3 lastMoveDirectionOverXZ;
+    /*IEnumerator ExampleCaoroutine()
+    {
+        yield return new WaitForSeconds(2);
+
+        groundedF();
+    }
+
+    public void groundedF()
+    {
+        if (charController.isGrounded != true)
+        {
+            animator.SetBool("Fall", true);
+        }
+    }*/
+   
+
+Vector3 lastMoveDirectionOverXZ;
 
     public void Update()
     {
         //if (MeVes == null) MeVes = GameObject.Find("Enemy")?.GetComponent<EnemiCont>();
         //if (MeSientes == null) MeSientes = GameObject.Find("Enemy")?.GetComponent<EnemiCont>();
+        //animator.SetInteger("Speed");
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            //animator.SetBool("Run", true);
+            moveSpeed = 8;
+            animator.SetBool("Run", true);
+            moveSpeed = 6;
+            Still = false;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = 4;
+            animator.SetBool("Run", false);
+
+        }
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            animator.SetBool("isWalking", false);
+            transform.hasChanged = false;
+
+        }
 
         canStealthKill = false;
         if (currentEnemyInContact)
@@ -90,7 +133,9 @@ public class PlayerController : MonoBehaviour
         {
             putaso = true;
             //aqui ejecutar animacion de ataque
-            if(currentEnemyInContact)
+            animator.SetTrigger("Attack");
+
+            if (currentEnemyInContact)
             {
                 poo = poo + 1;
                 //currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
@@ -114,16 +159,37 @@ public class PlayerController : MonoBehaviour
 
             moveDirection.y = yStore;
 
+            if (transform.hasChanged)
+            {
+                animator.SetBool("isWalking", true);
+                transform.hasChanged = false;
+            }
+            else
+            {
+                animator.SetBool("isWalking", false);
+                Still = true;
+            }
 
             if (charController.isGrounded)
             {
                 moveDirection.y = 0f;
                 SlideDown();
+                animator.SetBool("Fall", false);
                 if (Input.GetButtonDown("Jump"))
                 {
                     moveDirection.y = jumpForce;
+                    animator.SetTrigger("Jump");
                 }
+
+                
             }
+            if (charController.isGrounded != true)
+            {
+                //StartCoroutine("ExampleCoroutine");
+            }
+                
+
+          
 
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
 
@@ -167,6 +233,15 @@ public class PlayerController : MonoBehaviour
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
             charController.Move(moveDirection);
         }
+
+        if (Still == true)
+        {
+            moveSpeed = 4;
+            
+
+        }
+        
+
 
     }
 
@@ -228,6 +303,8 @@ public class PlayerController : MonoBehaviour
     {
         AttackArea = true;
     }
+
+
 
     /*public void StealthTakeDown()
     {

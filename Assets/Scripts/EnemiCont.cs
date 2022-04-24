@@ -6,7 +6,7 @@ public class EnemiCont : MonoBehaviour
 {
     public Transform[] patrolPoints;
     public int currentPatrolPoint;
-
+    
     public UnityEngine.AI.NavMeshAgent agent;
 
 
@@ -147,8 +147,9 @@ public class EnemiCont : MonoBehaviour
 
                 if (distanceToPlayer <= attackRange) // para hacer un rango (distanceToPlayer < attackRange)
                 {
+                    agent.speed = 0;
                     currentState = AIState.Attacking;
-                    //animator.SetTrigger("Attack");
+                    animator.SetTrigger("Attack");
                     animator.SetBool("IsMoving", false);
                     animator.SetBool("IsChasing", false);
 
@@ -179,9 +180,11 @@ public class EnemiCont : MonoBehaviour
                 {
                     if (distanceToPlayer < attackRange)
                     {
-                        //animator.SetTrigger("Attack");
+                        agent.speed = 0;
+                        animator.SetTrigger("Attack");
                         attackCounter = timeBetweenAttacks;
                         TeVeo = true;
+                        agent.enabled = false;
                     }
                     else
                     {
@@ -189,8 +192,14 @@ public class EnemiCont : MonoBehaviour
                         waitCounter = waitAtPoint;
 
                         agent.isStopped = false;
+                        
 
-                    }    
+                    }
+
+                    if (distanceToPlayer < 5)
+                    {
+                        agent.speed = 0;
+                    }
 
                 }
 

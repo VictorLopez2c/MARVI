@@ -13,9 +13,11 @@ public class enemiVida : MonoBehaviour
     public int fun = 0;
     public bool Attacking = false;
     public Animator animator;
+    public GameObject Enemy;
+    public UnityEngine.AI.NavMeshAgent agent;
 
     //public GameObject deathEffect, itemDrop;
-    
+
 
 
     void Start()
@@ -42,7 +44,8 @@ public class enemiVida : MonoBehaviour
         {
             currentHealth = 0;
             //AudioManager.instance.PlaySFX(deathSound);
-            Destroy(gameObject);
+            
+            agent.speed = 0;
 
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //Instantiate(itemDrop, transform.position, transform.rotation);
@@ -52,13 +55,15 @@ public class enemiVida : MonoBehaviour
             currentHealth = currentHealth - 1;
             fun = fun + 1;
             //animator.SetTrigger("GetHit");
-            animator.SetBool("GetHit", false);
+            animator.SetTrigger("GetHit");
 
             if (currentHealth <= 0)
             {
                 //AudioManager.instance.PlaySFX(deathSound);
-                Destroy(gameObject);
-
+                animator.SetTrigger("Mort");
+                //Enemy.GetComponent<EnemiCont>().enabled = false;
+                //agent.enabled = false;
+                agent.isStopped = true;
                 //Instantiate(deathEffect, transform.position, transform.rotation);
                 //Instantiate(itemDrop, transform.position, transform.rotation);
             }
@@ -66,6 +71,9 @@ public class enemiVida : MonoBehaviour
 
         //PlayerController.instance.Bounce();
     }
+
+    //IEnumerator Temps()
+   
 
 
 }
