@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         BasicFX.Play();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
         Time.timeScale = 1f;
 
     }
