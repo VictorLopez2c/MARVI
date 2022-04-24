@@ -23,7 +23,7 @@ Material:
     m_Floats:
     - _AmbientAdjustment: 0
     - _BlendFloor: 0
-    - _Fade: -0.17
+    - _Fade: -0.49
     - _TransparentBottom: 0
     m_Colors: []
   m_BuildTextureStacks: []
