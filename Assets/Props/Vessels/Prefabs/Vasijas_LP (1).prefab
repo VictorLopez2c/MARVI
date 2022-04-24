@@ -98,6 +98,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3598586708324426512, guid: 8387f3c22a3907747815c37c2d313e27,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3938880626492652788, guid: 8387f3c22a3907747815c37c2d313e27,
         type: 3}
       propertyPath: m_Name
@@ -178,6 +183,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8869161136982874416, guid: 15b0502fb6e305e4ca2e5e51743b2e43,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b0502fb6e305e4ca2e5e51743b2e43, type: 3}
 --- !u!4 &265048415529077182 stripped
@@ -253,6 +263,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7586085704260538701, guid: 62991ab96400dd948b00b103c3c62d8a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62991ab96400dd948b00b103c3c62d8a, type: 3}
 --- !u!4 &1108164569988635841 stripped
@@ -323,6 +338,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3631176932982564973, guid: 74e994f76b1cca94992f7a99561b652c,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3631176932982564975, guid: 74e994f76b1cca94992f7a99561b652c,
         type: 3}
       propertyPath: m_Name
@@ -343,6 +363,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3783519163756996238}
     m_Modifications:
+    - target: {fileID: 993205910246436949, guid: 56e6073f57497a247bfbb05ef56f8399,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3334243030761924545, guid: 56e6073f57497a247bfbb05ef56f8399,
         type: 3}
       propertyPath: m_RootOrder
@@ -422,6 +447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickable-Basija (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106268076476818269, guid: 9f740031c3b58664c8157dbff4749994,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6164150771936199259, guid: 9f740031c3b58664c8157dbff4749994,
         type: 3}
