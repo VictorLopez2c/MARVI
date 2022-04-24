@@ -274,7 +274,7 @@ Material:
     - _OpaqueCullMode: 2
     - _OutlineDepthSensitivity: 1
     - _OutlineNormalsSensitivity: 1
-    - _OutlineThickness: 5
+    - _OutlineThickness: 0
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
