@@ -9,6 +9,10 @@ TagManager:
   - PlayerInteractionZone
   - Ground
   - Enemy
+  - Terrain
+  - Pont
+  - Rock
+  - Water
   layers:
   - Default
   - TransparentFX

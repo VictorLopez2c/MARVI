@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class enemiVida : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class enemiVida : MonoBehaviour
     public int fun = 0;
     public bool Attacking = false;
     public Animator animator;
+    public Animator Kayla;
     public GameObject Enemy;
     public UnityEngine.AI.NavMeshAgent agent;
 
@@ -46,6 +48,10 @@ public class enemiVida : MonoBehaviour
             //AudioManager.instance.PlaySFX(deathSound);
             
             agent.speed = 0;
+            Kayla.SetTrigger("Execution");
+            Thread.Sleep(500);
+
+
 
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //Instantiate(itemDrop, transform.position, transform.rotation);
@@ -72,7 +78,10 @@ public class enemiVida : MonoBehaviour
         //PlayerController.instance.Bounce();
     }
 
-    //IEnumerator Temps()
+    IEnumerator Temps()
+    {
+
+    }
    
 
 

@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
 
     public static PlayerController instance;
+    public PlayerController controller;
+
 
     public bool Still;
     public float moveSpeed;
@@ -40,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public bool AttackArea = false;
 
     public int poo = 0;
+
+    public AudioSource pasos;
 
 
 
@@ -257,9 +261,10 @@ Vector3 lastMoveDirectionOverXZ;
     public void SlideDown()
     {
         isOnSlope = Vector3.Angle(Vector3.up, hitNormal) >= charController.slopeLimit;
-
+        
         if (isOnSlope)
         {
+            animator.SetBool("Fall", true);
             moveDirection.x += ((1f - hitNormal.y) * hitNormal.x) * slideVelocity;
             moveDirection.z += ((1f - hitNormal.y) * hitNormal.z) * slideVelocity;
 

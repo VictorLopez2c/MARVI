@@ -14,6 +14,7 @@ public class HurtPlayer : MonoBehaviour
     {
         if(other.tag == "Damage")
         {
+            animator.SetTrigger("Hit");
             HealthManager.instance.Hurt();
             Instantiate(HitEffect,transform.position, transform.rotation);
             //animator.SetBool("Attack", true);
