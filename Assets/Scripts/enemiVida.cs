@@ -20,6 +20,7 @@ public class enemiVida : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
     public AudioSource Execution;
     public AudioSource AMort;
+    public AudioSource AHit;
 
 
     //public GameObject deathEffect, itemDrop;
@@ -71,12 +72,14 @@ public class enemiVida : MonoBehaviour
             fun = fun + 1;
             //animator.SetTrigger("GetHit");
             animator.SetTrigger("GetHit");
-           
+            AHit.Play();
+
 
             if (currentHealth <= 0)
             {
                 //AudioManager.instance.PlaySFX(deathSound);
                 animator.SetTrigger("Mort");
+                AMort.Play();
                 //Enemy.GetComponent<EnemiCont>().enabled = false;
                 //agent.enabled = false;
                 agent.isStopped = true;

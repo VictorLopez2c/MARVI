@@ -12,7 +12,7 @@ public class PasosSonido : MonoBehaviour
     // Use this for initialization
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Terrain")
+        if (other.gameObject.tag == "Terrain" & other.gameObject.tag != "Water")
         {
             Pie.Play();
         }
@@ -28,7 +28,7 @@ public class PasosSonido : MonoBehaviour
         {
             PiePont.Play();
         }
-        if (other.gameObject.tag == "Pont")
+        if (other.gameObject.tag == "Water")
         {
             PieWater.Play();
         }
