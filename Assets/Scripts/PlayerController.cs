@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour
 
     public int poo = 0;
 
-    public AudioSource pasos;
+    //public AudioSource pasos;
+    public AudioSource Jump;
 
 
 
@@ -137,7 +138,7 @@ Vector3 lastMoveDirectionOverXZ;
         {
             putaso = true;
             //aqui ejecutar animacion de ataque
-            animator.SetTrigger("Attack");
+            
 
             if (currentEnemyInContact)
             {
@@ -183,6 +184,7 @@ Vector3 lastMoveDirectionOverXZ;
                 {
                     moveDirection.y = jumpForce;
                     animator.SetTrigger("Jump");
+                    Jump.Play();
                 }
 
                 

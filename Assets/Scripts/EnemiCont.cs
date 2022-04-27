@@ -34,6 +34,8 @@ public class EnemiCont : MonoBehaviour
 
     public VisionEnemiga see;
 
+    public AudioSource BattleOn;
+
     public enum AIState
     {
         Idle,
@@ -144,6 +146,7 @@ public class EnemiCont : MonoBehaviour
                 agent.SetDestination(PlayerController.instance.transform.position);
                 agent.speed = 4;
                 animator.SetBool("IsChasing", true);
+                BattleOn.Play();
 
                 if (distanceToPlayer <= attackRange) // para hacer un rango (distanceToPlayer < attackRange)
                 {

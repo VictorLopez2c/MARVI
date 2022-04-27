@@ -96,7 +96,7 @@ public class GoldPickup : MonoBehaviour
         UIManager.instance.goldImage.enabled = !UIManager.instance.goldImage.enabled;
         yield return new WaitForSeconds(0.5f);
         UIManager.instance.goldImage.enabled = !UIManager.instance.goldImage.enabled;
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 

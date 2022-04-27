@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
+using System.Threading.Tasks;
 
 public class enemiVida : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class enemiVida : MonoBehaviour
     public Animator Kayla;
     public GameObject Enemy;
     public UnityEngine.AI.NavMeshAgent agent;
+    public AudioSource Execution;
+    public AudioSource AMort;
+
 
     //public GameObject deathEffect, itemDrop;
 
@@ -48,8 +52,12 @@ public class enemiVida : MonoBehaviour
             //AudioManager.instance.PlaySFX(deathSound);
             
             agent.speed = 0;
+            agent.isStopped = true;
             Kayla.SetTrigger("Execution");
-            Thread.Sleep(500);
+            Execution.Play();
+            Task.Delay(500);
+            animator.SetTrigger("Mort");
+            AMort.Play();
 
 
 
@@ -58,10 +66,12 @@ public class enemiVida : MonoBehaviour
         }
         if (Attacking == true)
         {
+            Kayla.SetTrigger("Attack");
             currentHealth = currentHealth - 1;
             fun = fun + 1;
             //animator.SetTrigger("GetHit");
             animator.SetTrigger("GetHit");
+           
 
             if (currentHealth <= 0)
             {
@@ -78,10 +88,8 @@ public class enemiVida : MonoBehaviour
         //PlayerController.instance.Bounce();
     }
 
-    IEnumerator Temps()
-    {
-
-    }
+    //IEnumerator Temps()
+ 
    
 
 
