@@ -43,7 +43,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5244203874420915442
 Transform:
@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Halo
       objectReference: {fileID: 0}
+    - target: {fileID: 2135585165905556546, guid: 7566ca88e9bc5f6439fa291e5ee1a66c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 9010247137273191754, guid: 7566ca88e9bc5f6439fa291e5ee1a66c,
         type: 3}
       propertyPath: m_RootOrder
@@ -207,6 +212,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192644906442211772, guid: 7566ca88e9bc5f6439fa291e5ee1a66c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7566ca88e9bc5f6439fa291e5ee1a66c, type: 3}
@@ -293,11 +303,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6250076149019478384, guid: 451af94c93858c842aedc39e286e2fdc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -6195767538593635260, guid: 451af94c93858c842aedc39e286e2fdc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ab3a24bd368bfc34993f50c90f41f126, type: 2}
+    - target: {fileID: -4507900262165122138, guid: 451af94c93858c842aedc39e286e2fdc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -2422315340263230684, guid: 451af94c93858c842aedc39e286e2fdc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -2254504247542753893, guid: 451af94c93858c842aedc39e286e2fdc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1554193974251969968, guid: 451af94c93858c842aedc39e286e2fdc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -1041279737980340588, guid: 451af94c93858c842aedc39e286e2fdc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -308,16 +343,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: St-Snake
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 451af94c93858c842aedc39e286e2fdc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3418002285673343216, guid: 451af94c93858c842aedc39e286e2fdc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 067d28fcf615d164ea156815c9b21f37, type: 2}
+    - target: {fileID: 5988881256312858879, guid: 451af94c93858c842aedc39e286e2fdc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7494326664508013997, guid: 451af94c93858c842aedc39e286e2fdc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ab3a24bd368bfc34993f50c90f41f126, type: 2}
+    - target: {fileID: 8144394004440419581, guid: 451af94c93858c842aedc39e286e2fdc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8535133971147982272, guid: 451af94c93858c842aedc39e286e2fdc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
