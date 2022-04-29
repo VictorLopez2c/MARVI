@@ -111,12 +111,6 @@ Vector3 lastMoveDirectionOverXZ;
             animator.SetBool("Run", false);
 
         }
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
-        {
-            animator.SetBool("isWalking", false);
-            transform.hasChanged = false;
-
-        }
 
         canStealthKill = false;
         if (currentEnemyInContact)
