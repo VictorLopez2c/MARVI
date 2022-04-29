@@ -57,9 +57,12 @@ public class PlayerController : MonoBehaviour
     public bool putaso = false;
     public EnemiCont destruir;
 
+    Vector3 lastPosition;
+
     private void Awake()
     {
         instance = this;
+        lastPosition = transform.position;
     }
 
 
@@ -246,8 +249,11 @@ Vector3 lastMoveDirectionOverXZ;
             
 
         }
-        
 
+        Vector3 movementInThisFrame = transform.position - lastPosition;
+        animator.SetFloat("Speed", movementInThisFrame.magnitude / Time.deltaTime);
+
+        lastPosition = transform.position;
 
     }
 
