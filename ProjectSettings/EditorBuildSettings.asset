@@ -23,9 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test1Victory.unity
     guid: f7f85c0b094f5404eb0fff9953710657
-  - enabled: 1
-    path: Assets/LEVEL DESIGN/LEVELDESIGN.unity
+  - enabled: 0
+    path: Assets/Scenes/LEVEL DESIGN/LEVELDESIGN.unity
     guid: a910bdd3a10d7e448abaff152c2262c3
+  - enabled: 1
+    path: Assets/Scenes/LEVEL DESIGN/LEVELDESIGN 1.unity
+    guid: 5a768b821e3a1ca4c944efe39fc2180b
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0f07c908165d4e64dac8bc656adc763d,
       type: 2}

@@ -32,6 +32,7 @@ public class UIManager : MonoBehaviour
     public GameObject AnimSound;
     public GameObject Collect;
     public GameObject Interrogante;
+    public GameObject Oro;
 
     public Animator loked;
     public Animator ImgMenu;
@@ -133,6 +134,7 @@ public class UIManager : MonoBehaviour
         MainButtons.SetActive(false);
         ImgMenu.SetBool("Collectibles", true);
         BarraMenu.SetBool("salida", false);
+        //Oro.SetActive(true);
 
     }
     
@@ -151,6 +153,10 @@ public class UIManager : MonoBehaviour
         BarraMenu.SetBool("salida", true);
         ButtonsFake.SetActive(true);
         StartCoroutine("WaitMenu");
+        //Oro.SetActive(false);
+        MainButtons.SetActive(true);
+        Collect.SetActive(false);
+        BarraMenu.SetBool("Barra", false);
 
     }
 
