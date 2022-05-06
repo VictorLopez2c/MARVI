@@ -54,18 +54,18 @@ public class EnemiCont : MonoBehaviour
     }
 
 
-
     public void Update()
     {
         //PlayerController PlayerScript = GetComponent<PlayerController>();
         //PlayerController variable = GetComponent<PlayerController>();
         //putasohit = variable.putaso;
-        if(putasoHit != null) putasoHit = GameObject.Find("Player").GetComponent<PlayerController>();
+        if (putasoHit != null) putasoHit = GameObject.Find("Player").GetComponent<PlayerController>();
         if (see != null) see = GameObject.Find("Vista").GetComponent<VisionEnemiga>();
         //if (variable correr != null) variable correr = GameObject.Find("Player").GetComponent<PlayerController>();
 
 
-        if (putasoHit != null && putasoHit.putaso == true){
+        if (putasoHit != null && putasoHit.putaso == true)
+        {
             _DaNo = 1;
         }
 
@@ -95,7 +95,7 @@ public class EnemiCont : MonoBehaviour
                     agent.SetDestination(patrolPoints[currentPatrolPoint].position);
                 }
 
-                if (see.vision == true)
+                if ((see.vision == true) && (distanceToPlayer < chaseRange))
                 {
                     currentState = AIState.Chasing;
                     animator.SetBool("IsMoving", true);
@@ -123,7 +123,7 @@ public class EnemiCont : MonoBehaviour
                     waitCounter = waitAtPoint;
                 }
 
-                if (see.vision == true) //&& distanceToPlayer <= chaseRange)
+                if ((see.vision == true) && (distanceToPlayer < chaseRange))
                 {
                     currentState = AIState.Chasing;
                     cerca = true;
@@ -137,7 +137,7 @@ public class EnemiCont : MonoBehaviour
                     currentState = AIState.Chasing;
                 }*/
 
-                 animator.SetBool("IsMoving", true);
+                animator.SetBool("IsMoving", true);
 
                 break;
 
@@ -146,7 +146,7 @@ public class EnemiCont : MonoBehaviour
                 agent.SetDestination(PlayerController.instance.transform.position);
                 agent.speed = 4;
                 animator.SetBool("IsChasing", true);
-                BattleOn.Play();
+                //BattleOn?.Play();
 
                 if (distanceToPlayer <= attackRange) // para hacer un rango (distanceToPlayer < attackRange)
                 {
@@ -172,7 +172,7 @@ public class EnemiCont : MonoBehaviour
                 }
 
                 break;
-            
+
             case AIState.Attacking:
 
                 transform.LookAt(PlayerController.instance.transform, Vector3.up);
@@ -195,7 +195,7 @@ public class EnemiCont : MonoBehaviour
                         waitCounter = waitAtPoint;
 
                         agent.isStopped = false;
-                        
+
 
                     }
 
@@ -208,8 +208,6 @@ public class EnemiCont : MonoBehaviour
 
                 break;
         }
-       
-
     }
 
     /*private void OnTriggerEnter(Collider other)

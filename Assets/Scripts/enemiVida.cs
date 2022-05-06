@@ -47,44 +47,31 @@ public class enemiVida : MonoBehaviour
 
     public void EnemyTakeDamage()
     {
-        if (Attacking == false)
+
+        if (currentHealth > 0)
         {
-            currentHealth = 0;
-            //AudioManager.instance.PlaySFX(deathSound);
-            
-            agent.speed = 0;
-            agent.isStopped = true;
-            Kayla.SetTrigger("Execution");
-            Execution.Play();
-            Task.Delay(500);
-            animator.SetTrigger("Mort");
-            AMort.Play();
+            int oldHealth = currentHealth;
 
+            if (Attacking == false) { currentHealth = 0; }
+            if (Attacking == true) { currentHealth = currentHealth - 1; }
 
-
-            //Instantiate(deathEffect, transform.position, transform.rotation);
-            //Instantiate(itemDrop, transform.position, transform.rotation);
-        }
-        if (Attacking == true)
-        {
-            Kayla.SetTrigger("Attack");
-            currentHealth = currentHealth - 1;
-            fun = fun + 1;
-            //animator.SetTrigger("GetHit");
-            animator.SetTrigger("GetHit");
-            AHit.Play();
-
-
-            if (currentHealth <= 0)
+            //if (currentHealth != oldHealth)
             {
-                //AudioManager.instance.PlaySFX(deathSound);
-                animator.SetTrigger("Mort");
-                AMort.Play();
-                //Enemy.GetComponent<EnemiCont>().enabled = false;
-                //agent.enabled = false;
-                agent.isStopped = true;
-                //Instantiate(deathEffect, transform.position, transform.rotation);
-                //Instantiate(itemDrop, transform.position, transform.rotation);
+                if (currentHealth <= 0)
+                {
+                    animator.SetTrigger("Mort");
+                    AMort.Play();
+                    GetComponent<EnemiCont>().enabled = false;
+                    agent.isStopped = true;
+                }
+                else
+                {
+                    Kayla.SetTrigger("Attack");
+                    currentHealth = currentHealth - 1;
+                    fun = fun + 1;
+                    animator.SetTrigger("GetHit");
+                    AHit.Play();
+                }
             }
         }
 
