@@ -16,7 +16,7 @@ public class enemiVida : MonoBehaviour
     public bool Attacking = false;
     public Animator animator;
     public Animator Kayla;
-    public GameObject Enemy;
+    //public GameObject Enemy;
     public UnityEngine.AI.NavMeshAgent agent;
     public AudioSource Execution;
     public AudioSource AMort;
@@ -63,6 +63,7 @@ public class enemiVida : MonoBehaviour
                     AMort.Play();
                     GetComponent<EnemiCont>().enabled = false;
                     agent.isStopped = true;
+                    GetComponent<enemiVida>().enabled = false;
                 }
                 else
                 {

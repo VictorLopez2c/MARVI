@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2609162885881316479}
   - component: {fileID: 275120469316087989}
   - component: {fileID: 4129319629174348801}
+  - component: {fileID: 258207764880075430}
   m_Layer: 0
   m_Name: Farm
   m_TagString: Untagged
@@ -97,3 +98,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8305200005442849231, guid: 0899c616da9c68e469c1cf288d749771, type: 3}
+--- !u!136 &258207764880075430
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788369869300404576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6916089
+  m_Height: 3.027933
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 1.57}

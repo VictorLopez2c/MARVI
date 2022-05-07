@@ -157,7 +157,7 @@ public class EnemiCont : MonoBehaviour
                     animator.SetBool("IsChasing", false);
 
                     agent.velocity = Vector3.zero;
-                    agent.isStopped = true;
+                    //agent.isStopped = true;
 
                     attackCounter = timeBetweenAttacks;
                 }
@@ -208,6 +208,7 @@ public class EnemiCont : MonoBehaviour
 
                 break;
         }
+
     }
 
     /*private void OnTriggerEnter(Collider other)

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1293609956728743185}
   - component: {fileID: 4674781276535358317}
   - component: {fileID: 8444041433709658481}
+  - component: {fileID: 4561805589649029057}
   m_Layer: 0
   m_Name: HouseB_LP
   m_TagString: Untagged
@@ -139,3 +140,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48086846, y: 0.49509028, z: 0.7543029}
   m_Center: {x: 0.48475578, y: 0.64417565, z: 0.3666546}
+--- !u!136 &4561805589649029057
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331320040193176341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.3572254
+  m_Height: 4.6682763
+  m_Direction: 0
+  m_Center: {x: 0.038964294, y: 0.06999999, z: 1.6681467}
