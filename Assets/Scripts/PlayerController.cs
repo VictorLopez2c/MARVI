@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection;
 
     public CharacterController charController;
-
     public Animator animator;
     public GameObject playerModel;
     public Camera playerCamera;
@@ -44,17 +43,8 @@ public class PlayerController : MonoBehaviour
 
     public int poo = 0;
 
-    [Header("VFX & SFX Sources")]
-
     //public AudioSource pasos;
     public AudioSource Jump;
-
-    [SerializeField] ParticleSystem _walkingParticles = default;
-    [SerializeField] ParticleSystem _landParticles = default;
-    [SerializeField] ParticleSystem _jumpParticles = default;
-
-    [SerializeField] ParticleSystem _slashEffect = default;
-    [SerializeField] ParticleSystem _reverseSlashEffect = default;
 
 
 
@@ -81,8 +71,7 @@ public class PlayerController : MonoBehaviour
         charController = GetComponent<CharacterController>();
         //MeVes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
         //MeSientes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
-        _slashEffect.Stop();
-        _reverseSlashEffect.Stop();
+        
     }
 
     /*IEnumerator ExampleCaoroutine()
@@ -113,7 +102,6 @@ Vector3 lastMoveDirectionOverXZ;
             //animator.SetBool("Run", true);
             moveSpeed = 8;
             animator.SetBool("Run", true);
-            EnableWalkParticles();    //*** VFX *** WALK ENABLE //
             moveSpeed = 6;
             Still = false;
         }
@@ -121,7 +109,7 @@ Vector3 lastMoveDirectionOverXZ;
         {
             moveSpeed = 4;
             animator.SetBool("Run", false);
-            DisableWalkParticles();    //*** VFX *** WALK DISABLE//
+
         }
 
         canStealthKill = false;
@@ -176,13 +164,11 @@ Vector3 lastMoveDirectionOverXZ;
             if (transform.hasChanged)
             {
                 animator.SetBool("isWalking", true);
-                EnableWalkParticles();    //*** VFX *** WALK ENABLE //
                 transform.hasChanged = false;
             }
             else
             {
                 animator.SetBool("isWalking", false);
-                EnableWalkParticles();    //*** VFX *** WALK ENABLE //
                 Still = true;
             }
 
@@ -191,15 +177,11 @@ Vector3 lastMoveDirectionOverXZ;
                 moveDirection.y = 0f;
                 SlideDown();
                 animator.SetBool("Fall", false);
-
-                DisableWalkParticles();    //*** VFX *** WALK DISABLE //
-
                 if (Input.GetButtonDown("Jump"))
                 {
                     moveDirection.y = jumpForce;
                     animator.SetTrigger("Jump");
                     Jump.Play();
-                    PlayJumpParticles(); //*** VFX *** JUMP//
                 }
 
                 
@@ -350,71 +332,4 @@ Vector3 lastMoveDirectionOverXZ;
             StartCoroutine(EndKillStealth());
         }
     }*/
-
-    #region VFX
-    //*** PALYER EFFECT CONTROLLER ***//
-    public void EnableWalkParticles()
-    {
-        _walkingParticles.Play();
-    }
-
-    public void DisableWalkParticles()
-    {
-        _walkingParticles.Stop();
-    }
-
-    public void PlayJumpParticles()
-    {
-        _jumpParticles.Play();
-    }
-    public void PlayLandParticles()
-    {
-        _landParticles.Play();
-    }
-
-    public void PlaySlashEffect()
-    {
-        _slashEffect.Play();
-    }
-
-    public void PlayReverseSlashEffect()
-    {
-        _reverseSlashEffect.Play();
-    }
-
-    public void PlayLandParticles(float intensity)
-    {
-        // make sure intensity is always between 0 and 1
-        intensity = Mathf.Clamp01(intensity);
-
-        ParticleSystem.MainModule main = _landParticles.main;
-        ParticleSystem.MinMaxCurve origCurve = main.startSize; //save original curve to be assigned back to particle system
-        ParticleSystem.MinMaxCurve newCurve = main.startSize; //Make a new minMax curve and make our changes to the new copy
-
-        float minSize = newCurve.constantMin;
-        float maxSize = newCurve.constantMax;
-
-        // use the intensity to change the maximum size of the particle curve
-        newCurve.constantMax = Mathf.Lerp(minSize, maxSize, intensity);
-        main.startSize = newCurve;
-
-        _landParticles.Play();
-
-        // Put the original startSize back where you found it
-        StartCoroutine(ResetMinMaxCurve(_landParticles, origCurve));
-
-        // Note: We don't necessarily need to reset the curve, as it will be overridden
-    }
-
-    private IEnumerator ResetMinMaxCurve(ParticleSystem ps, ParticleSystem.MinMaxCurve curve)
-    {
-        while (ps.isEmitting)
-        {
-            yield return null;
-        }
-
-        ParticleSystem.MainModule main = ps.main;
-        main.startSize = curve;
-    }
-    #endregion
 }
