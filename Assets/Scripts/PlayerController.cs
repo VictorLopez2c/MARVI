@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public static PlayerController instance;
     public PlayerController controller;
 
-
+    [Header("Player Characteristics")]
     public bool Still;
     public float moveSpeed;
     public float jumpForce;
@@ -19,11 +18,16 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveDirection;
 
+    [Header("Player Sources")]
     public CharacterController charController;
     public Animator animator;
+
     public GameObject playerModel;
     public Camera playerCamera;
 
+    public GameObject[] playerPieces;
+
+    [Header("Player States")]
     public bool isKnocking;
     public float knockBackLenght = .5f;
     private float knockBackCounter;
@@ -34,22 +38,11 @@ public class PlayerController : MonoBehaviour
     public float slideVelocity;
     public float slopeForceDown;
 
-    public GameObject[] playerPieces;
-
     public bool stopMove;
-
 
     public bool AttackArea = false;
 
     public int poo = 0;
-
-    //public AudioSource pasos;
-    public AudioSource Jump;
-
-
-
-
-
     //public MeVes;
     //public EnemiCont MeSientes;
     public bool canStealthKill = false; //variable para definir ataque ligero(true) o ataque mortal(false)
@@ -58,6 +51,21 @@ public class PlayerController : MonoBehaviour
     public EnemiCont destruir;
 
     Vector3 lastPosition;
+
+
+    //*** VFX ***//
+    [Header("VFX & SFX Sources")]
+
+    //public AudioSource pasos;
+    public AudioSource Jump;
+
+    [SerializeField] ParticleSystem _walkingParticles = default;
+    [SerializeField] ParticleSystem _landParticles = default;
+    [SerializeField] ParticleSystem _jumpParticles = default;
+
+    [SerializeField] ParticleSystem _slashEffect = default;
+    [SerializeField] ParticleSystem _reverseSlashEffect = default;
+
 
     private void Awake()
     {
@@ -71,6 +79,10 @@ public class PlayerController : MonoBehaviour
         charController = GetComponent<CharacterController>();
         //MeVes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
         //MeSientes = GameObject.Find("Enemy").GetComponent<EnemiCont>();
+
+        _slashEffect.Stop();
+        _reverseSlashEffect.Stop();
+
         
     }
 
@@ -102,6 +114,9 @@ Vector3 lastMoveDirectionOverXZ;
             //animator.SetBool("Run", true);
             moveSpeed = 8;
             animator.SetBool("Run", true);
+
+            EnableWalkParticles();    //*** VFX *** WALK ENABLE //
+
             moveSpeed = 6;
             Still = false;
         }
@@ -109,6 +124,8 @@ Vector3 lastMoveDirectionOverXZ;
         {
             moveSpeed = 4;
             animator.SetBool("Run", false);
+
+            DisableWalkParticles();    //*** VFX *** WALK DISABLE //
 
         }
 
@@ -136,6 +153,7 @@ Vector3 lastMoveDirectionOverXZ;
             putaso = true;
             //aqui ejecutar animacion de ataque
             
+            
 
             if (currentEnemyInContact)
             {
@@ -152,6 +170,8 @@ Vector3 lastMoveDirectionOverXZ;
             moveDirectionOverXZ = camera.transform.TransformDirection(moveDirectionOverXZ);
             moveDirectionOverXZ = Vector3.ProjectOnPlane(moveDirectionOverXZ, Vector3.up);
 
+            DisableWalkParticles();    //*** VFX *** WALK DISABLE //
+
             Debug.DrawRay(transform.position, moveDirectionOverXZ.normalized * 5f, Color.green, 0.1f);
 
             moveDirection = moveDirectionOverXZ;
@@ -160,15 +180,22 @@ Vector3 lastMoveDirectionOverXZ;
             moveDirection = moveDirection * moveSpeed;
 
             moveDirection.y = yStore;
+            
 
             if (transform.hasChanged)
             {
                 animator.SetBool("isWalking", true);
+
+                EnableWalkParticles();    //*** VFX *** WALK ENABLE //
+
                 transform.hasChanged = false;
             }
             else
             {
                 animator.SetBool("isWalking", false);
+
+                DisableWalkParticles();    //*** VFX *** WALK DISABLE //
+
                 Still = true;
             }
 
@@ -177,18 +204,23 @@ Vector3 lastMoveDirectionOverXZ;
                 moveDirection.y = 0f;
                 SlideDown();
                 animator.SetBool("Fall", false);
+
                 if (Input.GetButtonDown("Jump"))
                 {
                     moveDirection.y = jumpForce;
                     animator.SetTrigger("Jump");
                     Jump.Play();
+
+                    PlayLandParticles(); //*** VFX *** LAND//
+                    
+
                 }
 
                 
             }
             if (charController.isGrounded != true)
             {
-                //StartCoroutine("ExampleCoroutine");
+                DisableWalkParticles();    //*** VFX *** WALK DISABLE //
             }
                 
 
@@ -235,6 +267,7 @@ Vector3 lastMoveDirectionOverXZ;
             moveDirection = Vector3.zero;
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
             charController.Move(moveDirection);
+            DisableWalkParticles(); //*** VFX *** WALK DISABLE //
         }
 
         if (Still == true)
@@ -332,4 +365,71 @@ Vector3 lastMoveDirectionOverXZ;
             StartCoroutine(EndKillStealth());
         }
     }*/
+
+    #region VFX
+    //*** PALYER EFFECT CONTROLLER ***//
+    public void EnableWalkParticles()
+    {
+        _walkingParticles.Play();
+    }
+
+    public void DisableWalkParticles()
+    {
+        _walkingParticles.Stop();
+    }
+
+    public void PlayJumpParticles()
+    {
+        _jumpParticles.Play();
+    }
+    public void PlayLandParticles()
+    {
+        _landParticles.Play();
+    }
+
+    public void PlaySlashEffect()
+    {
+        _slashEffect.Play();
+    }
+
+    public void PlayReverseSlashEffect()
+    {
+        _reverseSlashEffect.Play();
+    }
+
+    public void PlayLandParticles(float intensity)
+    {
+        // make sure intensity is always between 0 and 1
+        intensity = Mathf.Clamp01(intensity);
+
+        ParticleSystem.MainModule main = _landParticles.main;
+        ParticleSystem.MinMaxCurve origCurve = main.startSize; //save original curve to be assigned back to particle system
+        ParticleSystem.MinMaxCurve newCurve = main.startSize; //Make a new minMax curve and make our changes to the new copy
+
+        float minSize = newCurve.constantMin;
+        float maxSize = newCurve.constantMax;
+
+        // use the intensity to change the maximum size of the particle curve
+        newCurve.constantMax = Mathf.Lerp(minSize, maxSize, intensity);
+        main.startSize = newCurve;
+
+        _landParticles.Play();
+
+        // Put the original startSize back where you found it
+        StartCoroutine(ResetMinMaxCurve(_landParticles, origCurve));
+
+        // Note: We don't necessarily need to reset the curve, as it will be overridden
+    }
+
+    private IEnumerator ResetMinMaxCurve(ParticleSystem ps, ParticleSystem.MinMaxCurve curve)
+    {
+        while (ps.isEmitting)
+        {
+            yield return null;
+        }
+
+        ParticleSystem.MainModule main = ps.main;
+        main.startSize = curve;
+    }
+    #endregion
 }
