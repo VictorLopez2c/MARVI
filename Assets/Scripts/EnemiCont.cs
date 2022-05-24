@@ -54,8 +54,9 @@ public class EnemiCont : MonoBehaviour
     }
 
 
+
     public void Update()
-    {
+    {   
         //PlayerController PlayerScript = GetComponent<PlayerController>();
         //PlayerController variable = GetComponent<PlayerController>();
         //putasohit = variable.putaso;

@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject pauseScreen, optionsScreen;
 
+    public GameObject Robotitus;
+
     public GameObject MainButtons;
     public GameObject ButtonsFake;
     public GameObject Screen;
@@ -33,10 +35,12 @@ public class UIManager : MonoBehaviour
     public GameObject Collect;
     public GameObject Interrogante;
     public GameObject Oro;
+    
 
     public Animator loked;
     public Animator ImgMenu;
     public Animator BarraMenu;
+    public Animator AnrRobo;
 
     public string Main;
 
@@ -44,6 +48,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
     }
 
     void Start()
@@ -142,8 +147,19 @@ public class UIManager : MonoBehaviour
     {
         Interrogante.SetActive(true);
         loked.SetTrigger("Click");
+        loked.SetTrigger("Inter");
+        AnrRobo.SetTrigger("Adeu");
         //loked.SetBool("Change", true);
-       //loked.SetBool("Change", false);
+        //loked.SetBool("Change", false);
+    }
+    public void Robot()
+    {
+        Robotitus.SetActive(true);
+        AnrRobo.SetTrigger("Click");
+        AnrRobo.SetTrigger("Roboti");
+        loked.SetTrigger("AdeuI");
+        //loked.SetBool("Change", true);
+        //loked.SetBool("Change", false);
     }
 
     public void CloseCollect()

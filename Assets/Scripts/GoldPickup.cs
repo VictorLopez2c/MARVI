@@ -9,7 +9,11 @@ public class GoldPickup : MonoBehaviour
     public int value;
 	public int Oro;
 
+    //Menu
+    public GameObject GoldItem;
+    public GameObject NoGoldItem;
 
+    //Audio
     public GameObject goldEffect;
 
     public AudioSource goldSound;
@@ -60,34 +64,32 @@ public class GoldPickup : MonoBehaviour
             GameManager.instance.AddGold(value);
             goldSound.Play();
             Instantiate(goldEffect, transform.position, transform.rotation);
-            
-            switch (type)
-            {
-                case UIElementType.Jugete:
-                    /*slider = GetComponent<Slider>();
-                    slider.value = OroSettings.audioSettings.GetRobot();*/
-                    Oro = 1;
-                    break;
-                case UIElementType.Disco:
-                    /*slider = GetComponent<Slider>();
-                    slider.value = OroSettings.audioSettings.GetDisco();*/
-                    Oro = 2;
-                    break;
-                case UIElementType.Olisbo:
-                    /*slider = GetComponent<Slider>();
-                    slider.value = OroSettings.audioSettings.GetOlisbo();*/
-                    Oro = 3;
-                    break;
-                case UIElementType.Calavera:
-                    /*slider = GetComponent<Slider>();
-                    slider.value = OroSettings.audioSettings.GetCalavera();*/
-                    Oro = 4;
-                    break;
-            }
-            if( Oro == 1)
-            {
-				
-            }
+            GoldItem.SetActive(true);
+            NoGoldItem.SetActive(false);
+
+            //switch (type)
+            //{
+            //    case uielementtype.jugete:
+            //        /*slider = getcomponent<slider>();
+            //        slider.value = orosettings.audiosettings.getgolditem();*/
+            //        oro = 1;
+            //        break;
+            //    case uielementtype.disco:
+            //        /*slider = getcomponent<slider>();
+            //        slider.value = orosettings.audiosettings.getdisco();*/
+            //        oro = 2;
+            //        break;
+            //    case uielementtype.olisbo:
+            //        /*slider = getcomponent<slider>();
+            //        slider.value = orosettings.audiosettings.getolisbo();*/
+            //        oro = 3;
+            //        break;
+            //    case uielementtype.calavera:
+            //        /*slider = getcomponent<slider>();
+            //        slider.value = orosettings.audiosettings.getcalavera();*/
+            //        oro = 4;
+            //        break;
+            //}
 
         }
     }
