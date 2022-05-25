@@ -129,6 +129,8 @@ Vector3 lastMoveDirectionOverXZ;
 
         }
 
+        
+
         canStealthKill = false;
         if (currentEnemyInContact)
         {

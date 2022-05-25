@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     public bool fadeToBlack, fadeFromBlack;
 
     public Text healthText;
-    public Image healthImage;
+    [SerializeField]public Image healthImage;
     public Image hurtImage;
 
     public Text goldText;
