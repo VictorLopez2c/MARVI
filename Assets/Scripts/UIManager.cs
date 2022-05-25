@@ -35,13 +35,20 @@ public class UIManager : MonoBehaviour
     public GameObject Collect;
     public GameObject Interrogante;
     public GameObject Oro;
-    
+    public GameObject Disc;
+    public GameObject Calaveri;
+    public GameObject Olisbox;
+
 
     public Animator loked;
     public Animator ImgMenu;
     public Animator BarraMenu;
     public Animator AnrRobo;
-
+    public Animator AnrDisc;
+    public Animator AnrCalav;
+    public Animator AnrOlis;
+    public Animator ButtonsM;
+    public Animator ButtonsCollect;
     public string Main;
 
 
@@ -83,6 +90,7 @@ public class UIManager : MonoBehaviour
     public void Resume()
     {
         GameManager.instance.PauseUnpause();
+        Collect.SetActive(false);
     }
 
     public void OpenOptions()
@@ -139,6 +147,8 @@ public class UIManager : MonoBehaviour
         MainButtons.SetActive(false);
         ImgMenu.SetBool("Collectibles", true);
         BarraMenu.SetBool("salida", false);
+        ButtonsCollect.SetBool("salida", false);
+        //BarraMenu.SetTrigger("Entry");
         //Oro.SetActive(true);
 
     }
@@ -149,6 +159,9 @@ public class UIManager : MonoBehaviour
         loked.SetTrigger("Click");
         loked.SetTrigger("Inter");
         AnrRobo.SetTrigger("Adeu");
+        AnrDisc.SetTrigger("AdeuI");
+        AnrCalav.SetTrigger("AdeuI");
+        AnrOlis.SetTrigger("AdeuI");
         //loked.SetBool("Change", true);
         //loked.SetBool("Change", false);
     }
@@ -158,6 +171,47 @@ public class UIManager : MonoBehaviour
         AnrRobo.SetTrigger("Click");
         AnrRobo.SetTrigger("Roboti");
         loked.SetTrigger("AdeuI");
+        AnrDisc.SetTrigger("AdeuI");
+        AnrCalav.SetTrigger("AdeuI");
+        AnrOlis.SetTrigger("AdeuI");
+        //loked.SetBool("Change", true);
+        //loked.SetBool("Change", false);
+    }
+
+    public void Disco()
+    {
+        Disc.SetActive(true);
+        AnrDisc.SetTrigger("Click");
+        AnrDisc.SetTrigger("Inter");
+        AnrRobo.SetTrigger("Adeu");
+        loked.SetTrigger("AdeuI");
+        AnrCalav.SetTrigger("AdeuI");
+        AnrOlis.SetTrigger("AdeuI");
+        //loked.SetBool("Change", true);
+        //loked.SetBool("Change", false);
+    }
+
+    public void Calavera()
+    {
+        Calaveri.SetActive(true);
+        AnrCalav.SetTrigger("Click");
+        AnrCalav.SetTrigger("Inter");
+        AnrRobo.SetTrigger("Adeu");
+        loked.SetTrigger("AdeuI");
+        AnrDisc.SetTrigger("AdeuI");
+        AnrOlis.SetTrigger("AdeuI");
+        //loked.SetBool("Change", true);
+        //loked.SetBool("Change", false);
+    }
+    public void Olisbo()
+    {
+        Olisbox.SetActive(true);
+        AnrOlis.SetTrigger("Click");
+        AnrOlis.SetTrigger("Inter");
+        AnrRobo.SetTrigger("Adeu");
+        loked.SetTrigger("AdeuI");
+        AnrDisc.SetTrigger("AdeuI");
+        AnrCalav.SetTrigger("AdeuI");
         //loked.SetBool("Change", true);
         //loked.SetBool("Change", false);
     }
@@ -165,14 +219,21 @@ public class UIManager : MonoBehaviour
     public void CloseCollect()
     {
         ImgMenu.SetBool("Collectibles", false);
-        BarraMenu.SetBool("Barra", false);
+        BarraMenu.SetTrigger("Exit");
         BarraMenu.SetBool("salida", true);
-        ButtonsFake.SetActive(true);
+        //ButtonsFake.SetActive(true);
         StartCoroutine("WaitMenu");
         //Oro.SetActive(false);
         MainButtons.SetActive(true);
-        Collect.SetActive(false);
+        ButtonsM.SetTrigger("Hi");
+        ButtonsCollect.SetBool("salida", true);
         BarraMenu.SetBool("Barra", false);
+        Interrogante.SetActive(false);
+        Robotitus.SetActive(false);
+        Disc.SetActive(false);
+        Calaveri.SetActive(false);
+        Olisbox.SetActive(false);
+
 
     }
 

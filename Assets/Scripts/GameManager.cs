@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
         respawnPosition = PlayerController.instance.transform.position;
 
         AddGold(0);
