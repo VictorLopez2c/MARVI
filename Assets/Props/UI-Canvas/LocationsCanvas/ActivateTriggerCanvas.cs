@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivatePuzzleCanvas : MonoBehaviour
+public class ActivateTriggerCanvas : MonoBehaviour
 {
     [SerializeField] private Animator _Animator = null;
     public AudioSource Sound;
@@ -11,13 +11,13 @@ public class ActivatePuzzleCanvas : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            
+
         }
     }
     private void OnTriggerStay(Collider collider)
     {
-                
-        if(collider.gameObject.tag == "Player")
+
+        if (collider.gameObject.tag == "Player")
         {
             _Animator.SetBool("Open", true);
             Sound.Play();
@@ -29,6 +29,6 @@ public class ActivatePuzzleCanvas : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             _Animator.SetBool("Open", false);
-        }            
+        }
     }
 }
