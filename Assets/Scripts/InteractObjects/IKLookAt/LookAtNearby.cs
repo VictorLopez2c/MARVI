@@ -25,9 +25,9 @@ public class LookAtNearby : MonoBehaviour
        
         foreach (Collider col in cols) {
 
-            if (col.GetComponent<PointOfInterest>())
+            if (col.GetComponent<PointOfInterestNPC>())
             {
-                pointOfInterestNPC = col.GetComponent<PointOfInterest>();
+                pointOfInterestNPC = col.GetComponent<PointOfInterestNPC>();
                 break;
             }
         }
