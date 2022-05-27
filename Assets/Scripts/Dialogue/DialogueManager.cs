@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour {
 	public Sprite[] spriteGallery;//***//
 
 	public Image displayImage;//***//
-	public int i = -1;//***//
+	public int currentImage = -1;//***//
 
 	public Animator animator;
 
@@ -21,10 +21,9 @@ public class DialogueManager : MonoBehaviour {
 	void Start () {
 		sentences = new Queue<string>();
 	}
-	void Update()
-	{
-		displayImage.sprite = spriteGallery[i];//***//
-	}
+	//void Update()
+	//{
+	//}
 	public void StartDialogue (Dialogue dialogue)
 	{
 		animator.SetBool("IsOpen", true);
@@ -47,8 +46,10 @@ public class DialogueManager : MonoBehaviour {
 
     public void DisplayNextSentence ()
 	{
-		if (i + 1 < spriteGallery.Length)
-		{ i++; }//***//
+		if (currentImage + 1 < spriteGallery.Length)
+			{ currentImage++; }//***//
+		if (spriteGallery[currentImage])
+			{ displayImage.sprite = spriteGallery[currentImage]; }
 
 		if (sentences.Count == 0)
 		{
@@ -74,7 +75,7 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
-		i = 0;//***//
+		currentImage = 0;//***//
 		Time.timeScale = 1f;//***//
 	}
 

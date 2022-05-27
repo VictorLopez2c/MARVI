@@ -15,10 +15,10 @@ public class enemiVida : MonoBehaviour
     public int fun = 0;
     public bool Attacking = false;
     public Animator animator;
-    public Animator Kayla;
+    public Animator playerAnimator;
     //public GameObject Enemy;
     public UnityEngine.AI.NavMeshAgent agent;
-    public AudioSource Execution;
+    //public AudioSource playerExecutionAudioSource;
     public AudioSource AMort;
     public AudioSource AHit;
 
@@ -30,6 +30,8 @@ public class enemiVida : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        playerAnimator = PlayerController.instance.GetComponentInChildren<Animator>();
+        //playerExecutionAudioSource = PlayerController.instance.GetComponentInChildren<AudioSource>();
     }
     void Update()
     {
@@ -67,7 +69,7 @@ public class enemiVida : MonoBehaviour
                 }
                 else
                 {
-                    Kayla.SetTrigger("Attack");
+                    playerAnimator.SetTrigger("Attack");
                     currentHealth = currentHealth - 1;
                     fun = fun + 1;
                     animator.SetTrigger("GetHit");

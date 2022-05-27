@@ -64,14 +64,14 @@ public class HealthManager : MonoBehaviour
             {
                 currentHealth = 0;
                 GameManager.instance.Respawn();
-                deathSound.Play();
+                if (deathSound) { deathSound.Play(); }
             }
             else
             {
                 StartCoroutine(HurtImageCanvas());//Hurt IMG- Canvas Effect
                 PlayerController.instance.Knockback();
                 invincCounter = invincibleLenght;
-                hitSound.Play();
+                if (hitSound) { hitSound.Play(); }
             }
 
         }

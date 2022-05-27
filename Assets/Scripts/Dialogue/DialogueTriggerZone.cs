@@ -8,7 +8,7 @@ public class DialogueTriggerZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.tag == "Player")
+        if(collider.gameObject.CompareTag("DialogueCollider"))
         {
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             Destroy(gameObject);

@@ -6,22 +6,17 @@ public class VisionEnemiga : MonoBehaviour
 {
 
     public bool vision = false;
-    public EnemiCont rango;
-    public int antonio = 0;
+    EnemiCont enemiCont;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        rango = GameObject.Find("Enemy").GetComponent<EnemiCont>();
-    }
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        enemiCont = GetComponentInParent<EnemiCont>();
+    }
     public void Update(Collider other)
     {
-
-        if (rango != null) rango = GameObject.Find("Enemy").GetComponent<EnemiCont>();
-
-        if (rango.cerca == false)
+        if (enemiCont.cerca == false)
         {
             vision = false;
         }
@@ -43,15 +38,11 @@ public class VisionEnemiga : MonoBehaviour
     {
         if (other.tag=="Player")
         {
-            antonio = 1;
-
             vision = true;
         }
 
         if (other.CompareTag("Player"))
         {
-            EnemiCont enemiCont = GetComponentInParent<EnemiCont>();
-
             if (enemiCont)
             {
                 currentEnemyInContact = enemiCont;
@@ -66,68 +57,10 @@ public class VisionEnemiga : MonoBehaviour
         }
         if (other.CompareTag("Player"))
         {
-            EnemiCont enemiCont = GetComponentInParent<EnemiCont>();
-
             if (enemiCont)
             {
                 currentEnemyInContact = null;
             }
         }
     }
-    /// <summary>
-    /// //////////////////////////////////////////////////////////////////////////////////
-    /// </summary>
-
-    /* private void OnTriggerEnter(Collider other)
-     {
-         if (other.CompareTag("Player"))
-         {
-             PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
-
-             if (enemiCont)
-             {
-                 currentEnemyInContact = enemiCont;
-             }
-         }
-     }
-
-     private void OnTriggerExit(Collider other)
-     {
-         if (other.CompareTag("Player"))
-         {
-             PlayerController enemiCont = other.GetComponentInParent<PlayerController>();
-
-             if (enemiCont)
-             {
-                 currentEnemyInContact = null;
-             }
-         }
-     }*/
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            antonio = 1;
-            EnemiCont enemiCont = other.GetComponentInParent<EnemiCont>();
-
-            if (enemiCont)
-            {
-                currentEnemyInContact = enemiCont;
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            EnemiCont enemiCont = other.GetComponentInParent<EnemiCont>();
-
-            if (enemiCont)
-            {
-                currentEnemyInContact = null;
-            }
-        }
-    }*/
 }

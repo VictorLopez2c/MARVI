@@ -28,11 +28,11 @@ public class EnemiCont : MonoBehaviour
     //public PlayerController variable correr;
 
 
-    public PlayerController putasoHit;
+    PlayerController playerController;
     public int _DaNo = 0;
     //private List<PlayerController> PlayerList;
 
-    public VisionEnemiga see;
+    VisionEnemiga visionEnemiga;
 
     public AudioSource BattleOn;
 
@@ -48,28 +48,16 @@ public class EnemiCont : MonoBehaviour
     void Start()
     {
         waitCounter = waitAtPoint;
-        putasoHit = GameObject.Find("Player").GetComponent<PlayerController>();
-        see = GameObject.Find("Vista").GetComponent<VisionEnemiga>();
-        //variable correr = GameObject.Find("Player").GetComponent<PlayerController>();
+        //playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        visionEnemiga = GetComponentInChildren<VisionEnemiga>();
     }
 
 
 
     public void Update()
     {   
-        //PlayerController PlayerScript = GetComponent<PlayerController>();
-        //PlayerController variable = GetComponent<PlayerController>();
-        //putasohit = variable.putaso;
-        if (putasoHit != null) putasoHit = GameObject.Find("Player").GetComponent<PlayerController>();
-        if (see != null) see = GameObject.Find("Vista").GetComponent<VisionEnemiga>();
-        //if (variable correr != null) variable correr = GameObject.Find("Player").GetComponent<PlayerController>();
-
-
-        if (putasoHit != null && putasoHit.putaso == true)
-        {
-            _DaNo = 1;
-        }
-
+        if (PlayerController.instance.putaso == true)
+            { _DaNo = 1; }
 
         float distanceToPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
 
@@ -92,13 +80,13 @@ public class EnemiCont : MonoBehaviour
                 }
                 else
                 {
-                    currentState = AIState.Patrolling;
+                    SetCurrentState(AIState.Patrolling);
                     agent.SetDestination(patrolPoints[currentPatrolPoint].position);
                 }
 
-                if ((see.vision == true) && (distanceToPlayer < chaseRange))
+                if ((visionEnemiga.vision == true) && (distanceToPlayer < chaseRange))
                 {
-                    currentState = AIState.Chasing;
+                    SetCurrentState(AIState.Chasing);
                     animator.SetBool("IsMoving", true);
                     cerca = true;
                     TeVeo = true;
@@ -120,13 +108,13 @@ public class EnemiCont : MonoBehaviour
                     }
 
                     //agent.SetDestination(patrolPoints[currentPatrolPoint].position);
-                    currentState = AIState.Idle;
+                    SetCurrentState(AIState.Idle);
                     waitCounter = waitAtPoint;
                 }
 
-                if ((see.vision == true) && (distanceToPlayer < chaseRange))
+                if ((visionEnemiga.vision == true) && (distanceToPlayer < chaseRange))
                 {
-                    currentState = AIState.Chasing;
+                    SetCurrentState(AIState.Chasing);
                     cerca = true;
                     TeVeo = true;
                 }
@@ -135,7 +123,7 @@ public class EnemiCont : MonoBehaviour
 
                 /*else if ("variable correr == true" && distanceToPlayer < attackRange)
                 {
-                    currentState = AIState.Chasing;
+                    SetCurrentState(AIState.Chasing);
                 }*/
 
                 animator.SetBool("IsMoving", true);
@@ -152,7 +140,7 @@ public class EnemiCont : MonoBehaviour
                 if (distanceToPlayer <= attackRange) // para hacer un rango (distanceToPlayer < attackRange)
                 {
                     agent.speed = 0;
-                    currentState = AIState.Attacking;
+                    SetCurrentState(AIState.Attacking);
                     animator.SetTrigger("Attack");
                     animator.SetBool("IsMoving", false);
                     animator.SetBool("IsChasing", false);
@@ -165,7 +153,7 @@ public class EnemiCont : MonoBehaviour
 
                 if (distanceToPlayer > chaseRange)
                 {
-                    currentState = AIState.Idle;
+                    SetCurrentState(AIState.Idle);
                     waitCounter = waitAtPoint;
 
                     agent.velocity = Vector3.zero;
@@ -192,7 +180,7 @@ public class EnemiCont : MonoBehaviour
                     }
                     else
                     {
-                        currentState = AIState.Idle;
+                        SetCurrentState(AIState.Idle);
                         waitCounter = waitAtPoint;
 
                         agent.isStopped = false;
@@ -223,5 +211,25 @@ public class EnemiCont : MonoBehaviour
 
         }
     }*/
+
+    void SetCurrentState(AIState newState)
+    {
+        switch (newState)
+        {
+            case AIState.Idle:
+                agent.enabled = true;
+                break;
+            case AIState.Patrolling:
+                agent.enabled = true;
+                break;
+            case AIState.Chasing:
+                agent.enabled = true;
+                break;
+            case AIState.Attacking:
+                agent.enabled = false;
+                break;
+        }
+        currentState = newState;
+    }
 }
 
