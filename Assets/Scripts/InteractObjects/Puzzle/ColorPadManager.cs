@@ -24,8 +24,8 @@ public class ColorPadManager : MonoBehaviour
     public List<Color> possibleColors;
 
 
-    public Text placeCorrectText;   //***********************//
-    public Text placeTotalText;   //***********************//
+    //public Text placeCorrectText;   //*** Declarar TEXTO  Posiblidades***//
+    //public Text placeTotalText;   //***Declarar TEXTO Num Aciertos***//
 
 
     public UnityEvent completeEvent; //The event you want to call when all interactor are placed. This can be anything. 
@@ -48,20 +48,20 @@ public class ColorPadManager : MonoBehaviour
         totalCorrectPlacementsNeed = pads.Count; //Set the total number of correct placements needed to be the number of pads in the pads list. 
         currentCorrectPlacements = 0; //Start off with 0 correct placements
 
-        placeTotalText.text = totalCorrectPlacementsNeed.ToString();
-        
+        //placeTotalText.text = totalCorrectPlacementsNeed.ToString(); //***MOSTRAR CANVAS Total Posiblidades***//
+
 
         RandomizeColourList(); //Randomize the colors 
         AssignColoursToListObjects(pads); //Assign the colors to the pads
-        RandomizeColourList(); //Randomize the colors again
+        //RandomizeColourList(); //Randomize the colors again
         AssignColoursToListObjects(interactorPads); //Assign them to the interactor
-        ShuffleBoxOrder(); //Shuffle the box order so the same box does not always go on the same box
+        //ShuffleBoxOrder(); //Shuffle the box order so the same box does not always go on the same box
     }
 
     // Update is called once per frame
     void Update()
     {
-        placeCorrectText.text = currentCorrectPlacements.ToString();
+        //placeCorrectText.text = currentCorrectPlacements.ToString(); //***MOSTRAR CANVAS Num ACIERTOS***//
     }
 
     /// <summary>
@@ -144,22 +144,22 @@ public class ColorPadManager : MonoBehaviour
     /// <summary>
     /// Shuffles the order of the interactor, and applies an ID to each box
     /// </summary>
-    void ShuffleBoxOrder()
-    {
-        int number = 0;
-        for (int i = 0; i < interactorPads.Count; i++)
-        {
+    //void ShuffleBoxOrder()
+    //{
+    //    int number = 0;
+    //    for (int i = 0; i < interactorPads.Count; i++)
+    //    {
 
-            GameObject temp = interactorPads[i];
-            int randomIndex = UnityEngine.Random.Range(i, interactorPads.Count);
-            interactorPads[i] = interactorPads[randomIndex];
-            interactorPads[randomIndex] = temp;
+    //        GameObject temp = interactorPads[i];
+    //        int randomIndex = UnityEngine.Random.Range(i, interactorPads.Count);
+    //        interactorPads[i] = interactorPads[randomIndex];
+    //        interactorPads[randomIndex] = temp;
 
-            interactorPads[i].GetComponent<InteractPad>().interactPadId = number;
-            pads[i].GetComponent<Pad>().padId = number;
-            number++;
+    //        interactorPads[i].GetComponent<InteractPad>().interactPadId = number;
+    //        pads[i].GetComponent<Pad>().padId = number;
+    //        number++;
 
-        }
-    }
+    //    }
+    //}
 
 }

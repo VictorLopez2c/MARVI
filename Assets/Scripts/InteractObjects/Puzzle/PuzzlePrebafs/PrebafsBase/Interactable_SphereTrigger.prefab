@@ -159,7 +159,7 @@ MonoBehaviour:
   target: {fileID: 2514473784739786246}
   materials:
   - {fileID: 2100000, guid: 8cc4cd7a00ced2445b8252bd690335f3, type: 2}
-  - {fileID: 2100000, guid: dde3b3a758aa99d4892c49254939bf5f, type: 2}
+  - {fileID: 2100000, guid: dc58fe7d941957b4ea33e2409503b0bc, type: 2}
 --- !u!114 &2514473784739786240
 MonoBehaviour:
   m_ObjectHideFlags: 0
