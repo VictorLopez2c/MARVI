@@ -14,6 +14,8 @@ TagManager:
   - Rock
   - Water
   - DialogueCollider
+  - KaylaFoot
+  - DoorChecker
   layers:
   - Default
   - TransparentFX
