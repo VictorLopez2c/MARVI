@@ -7,19 +7,19 @@ public class HurtPlayer : MonoBehaviour
 {
 
  
-    public GameObject HitEffect;
+    //public GameObject HitEffect;
     public Animator animator;
-    public AudioSource Pupa;
+    //public AudioSource Pupa;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Damage")
         {
-            Pupa.Play();
+            //Pupa.Play();
             animator.SetTrigger("Hit");
             Task.Delay(2000);
             HealthManager.instance.Hurt();
-            Instantiate(HitEffect,transform.position, transform.rotation);
+            //Instantiate(HitEffect,transform.position, transform.rotation);
             //animator.SetBool("Attack", true);
             
         }
