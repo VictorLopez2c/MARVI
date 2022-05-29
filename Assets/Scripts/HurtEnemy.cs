@@ -37,6 +37,11 @@ public class HurtEnemy : MonoBehaviour
                 currentEnemyInContact = enemiCont;
             }
         }
+
+        if (other.CompareTag("Boss"))
+        {
+            other.GetComponent<BossStats>().bossCurrentHealth -= 1;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -51,6 +56,10 @@ public class HurtEnemy : MonoBehaviour
             }
         }
     }
+
+
+ 
+
     /*private void OnTriggerEnter(Collider other)
     {
 

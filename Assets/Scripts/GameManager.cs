@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator LevelEndWaiter()
     {
         PlayerController.instance.stopMove = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene(levelToLoad);
 

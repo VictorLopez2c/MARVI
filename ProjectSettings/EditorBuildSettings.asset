@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LEVEL DESIGN/LEVELDESIGN 1.unity
     guid: 5a768b821e3a1ca4c944efe39fc2180b
+  - enabled: 1
+    path: Assets/BossFight/FinalBoss.unity
+    guid: e11f23e714d2f2a49ae970b982242172
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0f07c908165d4e64dac8bc656adc763d,
       type: 2}
