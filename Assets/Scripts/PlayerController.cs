@@ -135,8 +135,8 @@ Vector3 lastMoveDirectionOverXZ;
         {
             putaso = true;
             //aqui ejecutar animacion de ataque
-            
-            
+
+            animator.SetTrigger("Attack");
 
             if (currentEnemyInContact)
             {
@@ -259,6 +259,7 @@ Vector3 lastMoveDirectionOverXZ;
         lastPosition = transform.position;
 
     }
+
 
     public void Knockback()
     {
