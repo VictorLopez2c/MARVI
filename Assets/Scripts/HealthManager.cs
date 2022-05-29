@@ -12,12 +12,8 @@ public class HealthManager : MonoBehaviour
     public float invincibleLenght = 2f;
     private float invincCounter;
 
-    //public AudioSource hitSound;
+    public AudioSource hitSound;
     public AudioSource deathSound;
-
-    //*** FX Player Controller***//
-    //PlayerFXController playerFXController;
-
     private void Awake()
     {
         instance = this;
@@ -66,19 +62,16 @@ public class HealthManager : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                
-                if (deathSound) { deathSound.Play(); }
-
                 currentHealth = 0;
                 GameManager.instance.Respawn();
-                
+                if (deathSound) { deathSound.Play(); }
             }
             else
             {
                 StartCoroutine(HurtImageCanvas());//Hurt IMG- Canvas Effect
                 PlayerController.instance.Knockback();
                 invincCounter = invincibleLenght;
-                //if (hitSound) { hitSound.Play(); }
+                if (hitSound) { hitSound.Play(); }
             }
 
         }

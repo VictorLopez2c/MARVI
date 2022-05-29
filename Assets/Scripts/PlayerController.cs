@@ -96,7 +96,7 @@ Vector3 lastMoveDirectionOverXZ;
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            
+            moveSpeed = 8;
             animator.SetBool("Run", true);
             moveSpeed = 6;
             Still = false;
@@ -104,9 +104,8 @@ Vector3 lastMoveDirectionOverXZ;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            moveSpeed = 2;
+            moveSpeed = 4;
             animator.SetBool("Run", false);
-            playerFXController.DisableWalkParticles(); //*** VFX *** WALK DISABLE //
         }
 
 
@@ -188,7 +187,7 @@ Vector3 lastMoveDirectionOverXZ;
                     animator.SetTrigger("Jump");
 
                     playerFXController.DisableWalkParticles();    //*** VFX *** WALK DISABLE //
-                    playerFXController.EnableJumpFX(); //*** VFX *** LAND//
+                    playerFXController.PlayJumpParticles(); //*** VFX *** LAND//
                 }
 
                 
@@ -229,13 +228,13 @@ Vector3 lastMoveDirectionOverXZ;
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
 
             charController.Move(moveDirection * Time.deltaTime);
-                        
+
+            playerFXController.EnableDamageFX();
+
             if (knockBackCounter <= 0)
             {
                 isKnocking = false;
-                //..playerFXController.PlaySpawnFX();
             }
-            
         }
 
         if (stopMove)
@@ -269,7 +268,6 @@ Vector3 lastMoveDirectionOverXZ;
         Debug.Log("Knocked back");
         moveDirection.y = knockbackPower.y;
         charController.Move(moveDirection * Time.deltaTime);
-        playerFXController.EnableDamageFX();
     }
 
     public void SlideDown()
