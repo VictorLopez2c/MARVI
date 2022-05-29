@@ -13,7 +13,7 @@ public class PickUpObject : MonoBehaviour
     {
         if (ObjectToPickUp != null && ObjectToPickUp.GetComponent<PickableObject>().isPickable == true && PickedObject == null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown("joystick button 0"))
 
 
             {
@@ -29,7 +29,7 @@ public class PickUpObject : MonoBehaviour
 
         else if (PickedObject != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown("joystick button 0"))
             {
                 PickedObject.GetComponent<PickableObject>().isPickable = true;
                 PickedObject.transform.SetParent(null);

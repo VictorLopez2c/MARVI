@@ -55,7 +55,7 @@ public class enemiVida : MonoBehaviour
             int oldHealth = currentHealth;
 
             if (Attacking == false) { currentHealth = 0; }
-            if (Attacking == true) { currentHealth = currentHealth - 1; }
+            if (Attacking == true) { currentHealth = currentHealth - 1; playerAnimator.SetTrigger("Execution"); }
 
             //if (currentHealth != oldHealth)
             {

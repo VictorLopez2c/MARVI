@@ -94,15 +94,16 @@ Vector3 lastMoveDirectionOverXZ;
     public void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown("joystick button 8"))
         {
             moveSpeed = 8;
             animator.SetBool("Run", true);
             moveSpeed = 6;
             Still = false;
             playerFXController.EnableWalkParticles(); //*** VFX *** WALK DISABLE //
+            //stopMove = false;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown("joystick button 9"))
         {
             moveSpeed = 4;
             animator.SetBool("Run", false);
@@ -131,12 +132,14 @@ Vector3 lastMoveDirectionOverXZ;
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 2")
+)
         {
             putaso = true;
             //aqui ejecutar animacion de ataque
 
             animator.SetTrigger("Attack");
+            //stopMove = true;
 
             if (currentEnemyInContact)
             {
