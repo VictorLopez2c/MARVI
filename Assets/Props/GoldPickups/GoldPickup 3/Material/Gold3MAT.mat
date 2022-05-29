@@ -144,7 +144,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_3e3b6395fabf49c3b4ec6a4211e480d5: 1.1
+    - Vector1_3e3b6395fabf49c3b4ec6a4211e480d5: 0.9
     - Vector1_8606F96E: 1.5
     - _AORemapMax: 1
     - _AORemapMin: 0
@@ -216,7 +216,7 @@ Material:
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
-    - _Smoothness: 0.498
+    - _Smoothness: 0.5
     - _SmoothnessRemapMax: 0.47512436
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1

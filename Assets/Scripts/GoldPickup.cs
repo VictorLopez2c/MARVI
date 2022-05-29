@@ -12,15 +12,11 @@ public class GoldPickup : MonoBehaviour
     //Menu
     public GameObject GoldItem;
     public GameObject NoGoldItem;
-    public GameObject GoldItem2D;
-    public GameObject GoldItemTxt;
 
     //Audio
     public GameObject goldEffect;
 
     public AudioSource goldSound;
-    public Animator animator;
-
     
     public enum UIElementType { 
        Jugete,
@@ -70,9 +66,6 @@ public class GoldPickup : MonoBehaviour
             Instantiate(goldEffect, transform.position, transform.rotation);
             GoldItem.SetActive(true);
             NoGoldItem.SetActive(false);
-            GoldItem2D.SetActive(true);
-            GoldItemTxt.SetActive(true);
-            animator.SetTrigger("Activate");
 
             //switch (type)
             //{

@@ -13,7 +13,15 @@ public class HurtEnemy : MonoBehaviour
     //
     public void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (currentEnemyInContact)
+            {
+                currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
+                Tranform.GetComponent<Stealth_KillBehaviour>().StealthTakeDown();
+                //Position = currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
+            }
+        }
     }
 
     EnemiCont currentEnemyInContact = null;
@@ -27,16 +35,6 @@ public class HurtEnemy : MonoBehaviour
             if (enemiCont)
             {
                 currentEnemyInContact = enemiCont;
-            }
-        }
-
-        if (other.CompareTag("HurtEnemy"))
-        {
-            if (currentEnemyInContact)
-            {
-                currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
-                Tranform.GetComponent<Stealth_KillBehaviour>().StealthTakeDown();
-                //Position = currentEnemyInContact.GetComponent<enemiVida>().EnemyTakeDamage();
             }
         }
     }

@@ -16,7 +16,6 @@ TagManager:
   - DialogueCollider
   - KaylaFoot
   - DoorChecker
-  - HurtEnemy
   layers:
   - Default
   - TransparentFX
