@@ -7,13 +7,15 @@ public class HealthManager : MonoBehaviour
 
     public static HealthManager instance;
 
+
+
     public int currentHealth, maxHealth;
 
     public float invincibleLenght = 2f;
     private float invincCounter;
 
-    public AudioSource hitSound;
-    public AudioSource deathSound;
+    //public AudioSource hitSound;
+    //public AudioSource deathSound;
     private void Awake()
     {
         instance = this;
@@ -24,7 +26,6 @@ public class HealthManager : MonoBehaviour
     {
         ResetHealth();
         UIManager.instance.hurtImage.enabled = false;//Hurt IMG- Canvas Disabled
-
     }
 
     // Update is called once per frame
@@ -63,15 +64,17 @@ public class HealthManager : MonoBehaviour
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
+                
                 GameManager.instance.Respawn();
-                if (deathSound) { deathSound.Play(); }
+                //if (deathSound) { deathSound.Play(); }
+                
             }
             else
             {
                 StartCoroutine(HurtImageCanvas());//Hurt IMG- Canvas Effect
                 PlayerController.instance.Knockback();
                 invincCounter = invincibleLenght;
-                if (hitSound) { hitSound.Play(); }
+                //if (hitSound) { hitSound.Play(); }
             }
 
         }

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class BossStats : MonoBehaviour
 {
-
+    public static BossStats instance;
     
     public Animator animator;
 
@@ -49,16 +49,29 @@ public class BossStats : MonoBehaviour
     public GameObject FB_emitter;
     public List<GameObject> pool2 = new List<GameObject>();
 
+    [Header("FX Sources")]
+    ///FX///
+    public Transform spawnFXPos;//000//
+    public GameObject spawnHitFX;//000//
+    public GameObject spawnDeathFX;//000//
+
+    [SerializeField] private AudioClip[] _hitFXAudios; //000//
+    public AudioSource hitAudioSource;//000//
+    public AudioSource deathAudioSource;//000//
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        instance = this;
+
+        hitAudioSource = gameObject.AddComponent<AudioSource>();//000//
+        deathAudioSource = gameObject.GetComponent<AudioSource>();//000//
     }
     void Start()
     {
-
         target = GameObject.Find("Player");
 
-
+        hitAudioSource.playOnAwake = false;//000//
     }
 
 
@@ -268,6 +281,7 @@ private void Update()
         if (!isDeath)
         {
             animator.SetTrigger("Dead");
+            EnableDeathBossFX();
             bossMusic.enabled = false;
             isDeath = true;
             StartCoroutine(GameManager.instance.LevelEndWaiter());
@@ -275,4 +289,24 @@ private void Update()
     }
 }
 
+
+    public void EnableHitBossFX()
+    {
+        Instantiate(spawnHitFX, spawnFXPos.position, spawnFXPos.rotation);
+
+        //Audio
+        hitAudioSource.volume = Random.Range(0.8f, 1);
+        hitAudioSource.pitch = Random.Range(0.8f, 1.1f);
+
+
+        if (_hitFXAudios.Length == 0) { print("Should play HIT, but no clip"); return; }
+        int nHitAudios = Random.Range(0, _hitFXAudios.Length);
+        hitAudioSource.clip = _hitFXAudios[nHitAudios];
+        hitAudioSource.Play();
+    }
+    public void EnableDeathBossFX()
+    {
+        Instantiate(spawnDeathFX, spawnFXPos.position, spawnFXPos.rotation);
+        deathAudioSource.Play();
+    }
 }

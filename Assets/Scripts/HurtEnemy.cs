@@ -41,6 +41,8 @@ public class HurtEnemy : MonoBehaviour
         if (other.CompareTag("Boss"))
         {
             other.GetComponent<BossStats>().bossCurrentHealth -= 1;
+            //***//
+            BossStats.instance.EnableHitBossFX();
         }
     }
 

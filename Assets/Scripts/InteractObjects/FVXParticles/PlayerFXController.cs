@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerFXController : MonoBehaviour
 {
-    
+    public static PlayerFXController instance;
 
     //*** VFX ***//
     [Header("VFX Sources")]
@@ -22,28 +22,73 @@ public class PlayerFXController : MonoBehaviour
     //[SerializeField] List<ParticleSystem> _DamageEffect = default;
     
     [SerializeField] ParticleSystem _DamageEffect = default; //OK
+    [SerializeField] ParticleSystem _DeathEffect = default;
+
+    [SerializeField] ParticleSystem _aRespawnParticles = default;
+    [SerializeField] ParticleSystem _bRespawnParticles = default;
+    [SerializeField] ParticleSystem _cRespawnParticles = default;
 
     [Header("SFX Sources")]
-    public AudioSource _jumpAudio;
-    public AudioSource _hitAudio;
-    public AudioSource _deathAudio;
+
+    [SerializeField] 
+    private AudioClip[] _jumpFXAudios; //000//
+    public AudioSource jumpAudioSource;//000//
+
+    [SerializeField] private AudioClip[] _hitFXAudios; //000//
+    public AudioSource hitAudioSource;//000//
+
+    [SerializeField] private AudioClip[] _spawnFXAudios; //000//
+    public AudioSource spawnAudioSource;//000//
+
+    //public AudioSource _deathAudio;
 
     //*** VFX ***//
 
     // Start is called before the first frame update
+    private void Start()
+    {
+
+        jumpAudioSource.playOnAwake = false;
+        hitAudioSource.playOnAwake = false;
+
+    }
     void Awake()
     {
         _slashEffect.Stop();
         _reverseSlashEffect.Stop();
 
 
-        _jumpAudio.Stop();
-                
+
+        //_deathAudio.Stop();
+
         //_DamageEffect[sDamageFX].Stop();
 
         _DamageEffect.Stop(); //OK
+        _DeathEffect.Stop();
+
+        hitAudioSource = gameObject.AddComponent<AudioSource>();//000//
+        jumpAudioSource = gameObject.AddComponent<AudioSource>();//000//
+        spawnAudioSource = gameObject.GetComponent<AudioSource>();//000//
+
+        _aRespawnParticles.Stop();
+        _bRespawnParticles.Stop();
+        _cRespawnParticles.Stop();
+
+        instance = this;
     }
 
+    public void EnableDeathFX()
+    {
+        //_deathAudio.Play();
+        _DeathEffect.Play(); //OK
+    }
+
+    public void EnableRespawnFX()
+    {
+        _aRespawnParticles.Play();
+        _bRespawnParticles.Play();
+        _cRespawnParticles.Play();
+    }
 
     public void EnableDamageFX()
     {
@@ -57,9 +102,34 @@ public class PlayerFXController : MonoBehaviour
         //_DamageEffect[nDamageFX].Play();
 
         _DamageEffect.Play();//OK
-        _hitAudio.Play();
-    }
 
+        //AUDIO 
+
+        hitAudioSource.volume = Random.Range(0.8f, 1);
+        hitAudioSource.pitch = Random.Range(0.8f, 1.1f);
+
+
+        if (_hitFXAudios.Length == 0) { print("Should play HIT, but no clip"); return; }
+        int nHitAudios = Random.Range(0, _hitFXAudios.Length);
+        hitAudioSource.clip = _hitFXAudios[nHitAudios];
+        hitAudioSource.Play();
+
+    }
+    public void PlaySpawnFX()
+    {
+        _aRespawnParticles.Play();
+        _bRespawnParticles.Play();
+        _cRespawnParticles.Play();
+
+        //AUDIO 
+        spawnAudioSource.volume = Random.Range(0.8f, 1);
+        spawnAudioSource.pitch = Random.Range(0.8f, 1.1f);
+
+        if (_spawnFXAudios.Length == 0) { print("Should play JUMP, but no clip"); return; }
+        int nSpawnAudios = Random.Range(0, _spawnFXAudios.Length);
+        spawnAudioSource.clip = _spawnFXAudios[nSpawnAudios];
+        spawnAudioSource.Play();
+    }
 
     public void EnableWalkParticles()
     {
@@ -74,7 +144,14 @@ public class PlayerFXController : MonoBehaviour
     public void PlayJumpParticles()
     {
         _jumpParticles.Play();
-        _jumpAudio.Play();
+        //AUDIO 
+        jumpAudioSource.volume = Random.Range(0.8f, 1);
+        jumpAudioSource.pitch = Random.Range(0.8f, 1.1f);
+
+        if (_jumpFXAudios.Length == 0) { print("Should play JUMP, but no clip"); return; }
+        int nJumpAudios = Random.Range(0, _jumpFXAudios.Length);
+        jumpAudioSource.clip = _jumpFXAudios[nJumpAudios];
+        jumpAudioSource.Play();
     }
     public void PlayLandParticles()
     {

@@ -2473,8 +2473,6 @@ MonoBehaviour:
   currentHealth: 10
   maxHealth: 10
   invincibleLenght: 2
-  hitSound: {fileID: 0}
-  deathSound: {fileID: 0}
 --- !u!1 &324556875
 GameObject:
   m_ObjectHideFlags: 0
@@ -5951,36 +5949,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &837577735
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 837577736}
-  m_Layer: 0
-  m_Name: Kayla
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &837577736
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837577735}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6599998, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 606674905}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &843664073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8440,11 +8408,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: HurtEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683869094937542821, guid: 9c9468469b914db4395702f90a8fac53,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4683869095490859600, guid: 9c9468469b914db4395702f90a8fac53,
         type: 3}
@@ -23994,7 +23957,7 @@ PrefabInstance:
     - target: {fileID: 4037922240435081529, guid: ba0cb373768d25346a7cd8eff7e3d95d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12207101
+      value: 0.12207102
       objectReference: {fileID: 0}
     - target: {fileID: 4037922240435081529, guid: ba0cb373768d25346a7cd8eff7e3d95d,
         type: 3}
@@ -24004,7 +23967,7 @@ PrefabInstance:
     - target: {fileID: 4037922240435081529, guid: ba0cb373768d25346a7cd8eff7e3d95d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.12004124
+      value: 0.120041244
       objectReference: {fileID: 0}
     - target: {fileID: 4037922240435081529, guid: ba0cb373768d25346a7cd8eff7e3d95d,
         type: 3}
@@ -24030,7 +23993,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 837577736}
+      objectReference: {fileID: 0}
     - target: {fileID: 4037922240435081671, guid: ba0cb373768d25346a7cd8eff7e3d95d,
         type: 3}
       propertyPath: m_Name
@@ -37395,7 +37358,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6320194908632430081}
-  m_LocalRotation: {x: 0.12207101, y: -0.69080174, z: 0.12004124, w: 0.70248264}
+  m_LocalRotation: {x: 0.12207102, y: -0.69080174, z: 0.120041244, w: 0.70248264}
   m_LocalPosition: {x: 6.8799973, y: 4.125884, z: -0.115371704}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

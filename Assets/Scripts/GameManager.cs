@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RespawnWaiter()
     {
+
         PlayerController.instance.gameObject.SetActive(false);
 
         UIManager.instance.fadeToBlack = true;

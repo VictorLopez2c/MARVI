@@ -1,6 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4449859116453660960
+--- !u!114 &3905522480124926296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357945597203723047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5e11f5297b6ef4dbab23a907b10ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeSpawnFXTime: 2
+--- !u!1001 &8357945597203627331
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +22,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 167524, guid: fdac75e990da47649b31f10049c400b0, type: 3}
       propertyPath: m_Name
-      value: BloodExplosion_Kaila Variant
+      value: BloodExplosion_Enemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 493160, guid: fdac75e990da47649b31f10049c400b0, type: 3}
       propertyPath: m_RootOrder
@@ -55,13 +68,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 19816760, guid: fdac75e990da47649b31f10049c400b0, type: 3}
-      propertyPath: InitialModule.maxNumParticles
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 19845262, guid: fdac75e990da47649b31f10049c400b0, type: 3}
-      propertyPath: InitialModule.maxNumParticles
-      value: 10
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19977426, guid: fdac75e990da47649b31f10049c400b0, type: 3}
       propertyPath: m_Materials.Array.size
@@ -77,3 +86,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdac75e990da47649b31f10049c400b0, type: 3}
+--- !u!1 &8357945597203723047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 167524, guid: fdac75e990da47649b31f10049c400b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8357945597203627331}
+  m_PrefabAsset: {fileID: 0}

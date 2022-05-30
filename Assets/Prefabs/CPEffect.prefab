@@ -28953,6 +28953,7 @@ GameObject:
   - component: {fileID: 7418824212295700930}
   - component: {fileID: 7418824212295700931}
   - component: {fileID: 7418824212295700928}
+  - component: {fileID: 5024121809113194876}
   m_Layer: 0
   m_Name: CPEffect
   m_TagString: Untagged
@@ -33769,6 +33770,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5024121809113194876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7418824212295700929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5e11f5297b6ef4dbab23a907b10ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeSpawnFXTime: 10
 --- !u!1 &7418824212789920187
 GameObject:
   m_ObjectHideFlags: 0

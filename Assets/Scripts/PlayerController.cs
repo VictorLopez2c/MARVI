@@ -96,7 +96,6 @@ Vector3 lastMoveDirectionOverXZ;
 
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown("joystick button 8"))
         {
-            moveSpeed = 8;
             animator.SetBool("Run", true);
             moveSpeed = 6;
             Still = false;
@@ -105,8 +104,9 @@ Vector3 lastMoveDirectionOverXZ;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown("joystick button 9"))
         {
-            moveSpeed = 4;
+            moveSpeed = 2;
             animator.SetBool("Run", false);
+            playerFXController.DisableWalkParticles(); //*** VFX *** WALK DISABLE //
         }
 
 
@@ -232,7 +232,6 @@ Vector3 lastMoveDirectionOverXZ;
 
             charController.Move(moveDirection * Time.deltaTime);
 
-            playerFXController.EnableDamageFX();
 
             if (knockBackCounter <= 0)
             {
@@ -271,6 +270,7 @@ Vector3 lastMoveDirectionOverXZ;
         Debug.Log("Knocked back");
         moveDirection.y = knockbackPower.y;
         charController.Move(moveDirection * Time.deltaTime);
+        playerFXController.EnableDamageFX();
     }
 
     public void SlideDown()

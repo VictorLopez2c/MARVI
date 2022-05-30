@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3509076045287389384}
   - component: {fileID: 8109947460385428495}
   - component: {fileID: 2351383440322935882}
+  - component: {fileID: 8770121790858889962}
   m_Layer: 0
   m_Name: Basija_002
   m_TagString: Untagged
@@ -97,6 +98,19 @@ CapsuleCollider:
   m_Height: 0.3486313
   m_Direction: 2
   m_Center: {x: 0, y: -0.00000023841858, z: 0.2982442}
+--- !u!65 &8770121790858889962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2207904847237729119}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3486312, y: 0.3486313, z: 0.5964889}
+  m_Center: {x: 0, y: 0, z: 0.29824445}
 --- !u!1 &6937461328018387292
 GameObject:
   m_ObjectHideFlags: 0
