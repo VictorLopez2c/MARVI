@@ -17,6 +17,7 @@ TagManager:
   - KaylaFoot
   - DoorChecker
   - HurtEnemy
+  - Boss
   layers:
   - Default
   - TransparentFX

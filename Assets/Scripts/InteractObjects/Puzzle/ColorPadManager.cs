@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class ColorPadManager : MonoBehaviour
 {
     public static ColorPadManager instance;
+    public Animator animator;
     [Header("SET Total Correct Placements Need on Inspector")]
     [SerializeField]
     int totalCorrectPlacementsNeed; //This is the total number of interactor that needs to be placed correctly before the door will open.
@@ -129,7 +130,9 @@ public class ColorPadManager : MonoBehaviour
         if (currentCorrectPlacements == totalCorrectPlacementsNeed)
         {
             Debug.Log("ALL BOXES PLACED CORRECTLY");
+            animator.SetBool("isOpen", true);
             completeEvent.Invoke();
+
         }
     }
 
