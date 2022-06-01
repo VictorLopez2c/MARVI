@@ -63,9 +63,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Oro: 0
-  goldEffect: {fileID: 135174240403246005, guid: 6398b012f10ab1a4abac848704547a27,
+  GoldItem: {fileID: 0}
+  NoGoldItem: {fileID: 0}
+  GoldItem2D: {fileID: 0}
+  GoldItemTxt: {fileID: 0}
+  goldEffect: {fileID: 6245760473495624795, guid: 4dda901baf468394789483246a9ac636,
     type: 3}
   goldSound: {fileID: 5948953622917525035}
+  animator: {fileID: 0}
   type: 0
 --- !u!82 &5948953622917525035
 AudioSource:
