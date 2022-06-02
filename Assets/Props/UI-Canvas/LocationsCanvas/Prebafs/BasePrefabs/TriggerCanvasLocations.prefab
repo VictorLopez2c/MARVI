@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1648442879411295689}
   - component: {fileID: 8100703712321127685}
   - component: {fileID: 8535248826364294095}
-  - component: {fileID: 6942879305460678127}
   m_Layer: 0
   m_Name: TriggerCanvasLocations
   m_TagString: Untagged
@@ -157,15 +156,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6942879305460678127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894248906197300592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c62b98620af1d54eac150c33e44f942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

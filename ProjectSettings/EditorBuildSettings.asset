@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LEVEL DESIGN/TestLevel.unity
     guid: a910bdd3a10d7e448abaff152c2262c3
   - enabled: 1
-    path: Assets/Scenes/LEVEL DESIGN/LEVELDESIGN 1.unity
+    path: Assets/Scenes/LEVEL DESIGN/MainLevel.unity
     guid: 5a768b821e3a1ca4c944efe39fc2180b
   - enabled: 1
     path: Assets/BossFight/FinalBoss.unity

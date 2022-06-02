@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4637977876985461128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7697240531749774939}
+  - component: {fileID: 37391276040367146}
+  - component: {fileID: 628687865902731809}
+  - component: {fileID: 7964666217955317876}
+  - component: {fileID: 8534397751963880373}
+  m_Layer: 0
+  m_Name: TempleTile_D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7697240531749774939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637977876985461128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &37391276040367146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637977876985461128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1508455596, guid: 18036820e4eaef34a9ef9afc1a245ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editableMesh_:
+    editMeshVersion: 2
+    mainPolygons_: []
+    mainPolygonsStream: 01000000050000000400000056e3ff404cc2383e000000c180adf739903d5b3a0000803f0000803f0000803f0000803f010000c14cc2383e000000c180adf7393ecd7f3f0000803f0000803f0000803f0000803f010000c14cc2383e4cecff40a4c37f3f3ecd7f3f0000803f0000803f0000803f0000803f56e3ff404cc2383e4cecff40a4c37f3f903d5b3a0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f0000000001000000000000803f000000004cc238be0000000001000000f09a8502000000000400000056e3ff40803360ba000000c12662513eb07d303f0000803f0000803f0000803f0000803f010000c1803360ba000000c1a0a3da3eb17d303f0000803f0000803f0000803f0000803f010000c14cc2383e000000c19fa3da3e360e333f0000803f0000803f0000803f0000803f56e3ff404cc2383e000000c12262513e360e333f0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f00000000010000000000000000000080bf000000c10000000001000000f29a85020000000004000000010000c1803360ba000000c1c75eda3e5a05333f0000803f0000803f0000803f0000803f010000c1803360ba4cecff4050dc503e5a05333f0000803f0000803f0000803f0000803f010000c14cc2383e4cecff4052dc503e4c70303f0000803f0000803f0000803f0000803f010000c14cc2383e000000c1c85eda3e4c70303f0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f0000000001000080bf0000000000000000010000c10000000001000000f49a8502000000000400000056e3ff40803360ba4cecff4052dc503e1482303f0000803f0000803f0000803f0000803f56e3ff40803360ba000000c1c85eda3e1582303f0000803f0000803f0000803f0000803f56e3ff404cc2383e000000c1c75eda3eb30e333f0000803f0000803f0000803f0000803f56e3ff404cc2383e4cecff4050dc503eb20e333f0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f00000000010000803f000000000000000056e3ffc00000000001000000f89a85020000000004000000010000c1803360ba4cecff40a0a3da3ec870303f0000803f0000803f0000803f0000803f56e3ff40803360ba4cecff402662513ec870303f0000803f0000803f0000803f0000803f56e3ff404cc2383e4cecff402262513ee402333f0000803f0000803f0000803f0000803f010000c14cc2383e4cecff409fa3da3ee402333f0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f000000000100000000000000000000803f4cecffc00000000001000000f69a850200000000
+    subPolygons_: []
+    smoothingGroups_:
+      smoothing_groups_: []
+      smoothingGroupStream_: 0100000000000000
+    edgeSharpnesses_:
+      edgeSharpnesses_: []
+    mirrorMode_:
+      enable: 0
+      plane:
+        normal_: {x: 0, y: 0, z: 0}
+        distance_: 0
+    uvIslandManager_:
+      uvislands_: []
+      uvislandsStream_: 01000000030000000001000000f09a8502000000003050ec02000000000002000000f49a850200000000f89a85020000000010773803000000000002000000f29a850200000000f69a850200000000a777380300000000
+    polygonGroupManager_:
+      polygonGroups_: []
+    activePolygonGroupId: 0
+    IsBuilt: 0
+  backfaces_: 0
+  materials:
+  - {fileID: 2100000, guid: c36e02477c804544d86679c5549225c9, type: 2}
+  editMode: 1
+  recalculateTangents: 1
+  serializedGuid: 
+  assetPath: 
+  isInvisibleObject: 0
+  mainRenderableMesh: {fileID: 0}
+--- !u!33 &628687865902731809
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637977876985461128}
+  m_Mesh: {fileID: 0}
+--- !u!23 &7964666217955317876
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637977876985461128}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c36e02477c804544d86679c5549225c9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 2
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &8534397751963880373
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637977876985461128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}

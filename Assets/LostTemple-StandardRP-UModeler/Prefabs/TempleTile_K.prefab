@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7426216035215573919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7426216035215573918}
+  - component: {fileID: 7426216035215573915}
+  - component: {fileID: 7426216035215573912}
+  - component: {fileID: 7426216035215573913}
+  - component: {fileID: 2693499330104969773}
+  m_Layer: 0
+  m_Name: TempleTile_K
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7426216035215573918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7426216035215573919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7426216035215573915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7426216035215573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1508455596, guid: 18036820e4eaef34a9ef9afc1a245ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editableMesh_:
+    editMeshVersion: 2
+    mainPolygons_: []
+    mainPolygonsStream: 0100000005000000040000004055cdbfc0a83a3e3808974120b4933e51041c400000803f0000803f0000803f0000803f4055cdbfc0a83a3e48d7c0414f66a73f51041c400000803f0000803f0000803f0000803fd0a83d41c0a83a3e48d7c0414f66a73fdb9d3fbe0000803f0000803f0000803f0000803fd0a83d41c0a83a3e3808974120b4933edb9d3fbe0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f0000000001000000000000803f00000000c0a83abe0000000001000000599534030000000004000000d0a83dc10020833a4ad7c0c11ed415c0864c983f0000803f0000803f0000803f0000803fd0a83dc10020833a48d7c04146f05540864c983f0000803f0000803f0000803f0000803fd0a83dc1c0a83a3e48d7c04146f055408646b93f0000803f0000803f0000803f0000803fd0a83dc1c0a83a3e4ad7c0c11ed415c08646b93f0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f0000000001000080bf0000000000000000d0a83dc10000000001000000e1973403000000000400000000d597bfc0a83a3e4ad7c0c11ed415c002f2bb3e0000803f0000803f0000803f0000803fd0a83dc1c0a83a3e4ad7c0c11ed415c08646b93f0000803f0000803f0000803f0000803fd0a83dc1c0a83a3e48d7c04146f055408646b93f0000803f0000803f0000803f0000803f00d597bfc0a83a3e48d7c04146f055400cf2bb3e0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f0000000001000000000000803f00000000c0a83abe0000000001000000e2973403000000000400000000d597bf0020833a4ad7c0c10c7405c002f2bb3e0000803f0000803f0000803f0000803fd0a83dc10020833a4ad7c0c10c7405c08646b93f0000803f0000803f0000803f0000803fd0a83dc1c0a83a3e4ad7c0c11ed415c08646b93f0000803f0000803f0000803f0000803f00d597bfc0a83a3e4ad7c0c11ed415c002f2bb3e0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f00000000010000000000000000000080bf4ad7c0c10000000001000000e3973403000000000400000000d597bfc0a83a3e48d7c0411086454002f2bb3e0000803f0000803f0000803f0000803fd0a83dc1c0a83a3e48d7c041108645408646b93f0000803f0000803f0000803f0000803fd0a83dc10020833a48d7c04146f055408646b93f0000803f0000803f0000803f0000803f00d597bf0020833a48d7c04146f055400cf2bb3e0000803f0000803f0000803f0000803f04000000000000000100000001000000020000000200000003000000030000000000000000000000000000000000803f0000803f000000000100000000000000000000803f48d7c0c10000000001000000e497340300000000
+    subPolygons_: []
+    smoothingGroups_:
+      smoothing_groups_: []
+      smoothingGroupStream_: 0100000000000000
+    edgeSharpnesses_:
+      edgeSharpnesses_: []
+    mirrorMode_:
+      enable: 0
+      plane:
+        normal_: {x: 0, y: 0, z: 0}
+        distance_: 0
+    uvIslandManager_:
+      uvislands_: []
+      uvislandsStream_: 01000000040000000004000000e197340300000000e297340300000000e397340300000000e497340300000000eb9734030000000001010000005995340300000000ec973403000000000004000000e197340300000000e297340300000000e397340300000000e4973403000000009d38390300000000010100000059953403000000009e38390300000000
+    polygonGroupManager_:
+      polygonGroups_: []
+    activePolygonGroupId: 0
+    IsBuilt: 0
+  backfaces_: 0
+  materials:
+  - {fileID: 2100000, guid: a344020c7836f9e40be76ae1fc0d96ec, type: 2}
+  editMode: 1
+  recalculateTangents: 1
+  serializedGuid: 
+  assetPath: 
+  isInvisibleObject: 0
+  mainRenderableMesh: {fileID: 0}
+--- !u!33 &7426216035215573912
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7426216035215573919}
+  m_Mesh: {fileID: 0}
+--- !u!23 &7426216035215573913
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7426216035215573919}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a344020c7836f9e40be76ae1fc0d96ec, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 2
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &2693499330104969773
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7426216035215573919}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}

@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Water
+  m_Shader: {fileID: -6465566751694194690, guid: 3c92cc723c8adb04f868a05de3a5dc71,
+    type: 3}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_71690A05:
+        m_Texture: {fileID: 2800000, guid: 2cd3ee1270a39a443a7794f6146bc259, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_D8DDF80E:
+        m_Texture: {fileID: 2800000, guid: b87d036f372cf074196210bb80c61718, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8be6625426a343f09fa1a27e16ec1d13_Texture_1:
+        m_Texture: {fileID: 2800000, guid: e05045c6eff129542af7788a5bd70fba, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - Foam_Amount: 5
+    - Foam_Cutoff: 3.5
+    - Foam_Evolution_Speed: 1.25
+    - Foam_Scale: 5
+    - Global_Fading: 30
+    - Light_Probe_Contribution: 2.5
+    - Refaction_Scale: 1
+    - Refraction_Evolution_Speed: 1.5
+    - Refraction_Height: 0.2
+    - Vector1_171EAE5E: 0.84
+    - Vector1_1C21B54D: 0.552
+    - Vector1_25aa78d5cd65435697c3191e93a6343a: 10
+    - Vector1_29DBF27E: 1.93
+    - Vector1_2B58F275: 1
+    - Vector1_2FBE3DFA: 2
+    - Vector1_41CFCD54: 0
+    - Vector1_436FE242: 0.298
+    - Vector1_47AAE853: 0.524
+    - Vector1_4F744986: 0.4
+    - Vector1_55765955: 0.16
+    - Vector1_65DAC18D: 2
+    - Vector1_707bdef874cb42eb8b6d49e6e1b05c44: 2
+    - Vector1_77A997E: 0.5
+    - Vector1_7A056A02: 0.5
+    - Vector1_7FDECC8: 8.55
+    - Vector1_8CEB4E60: 1
+    - Vector1_C0987224: 1.79
+    - Vector1_D2F03E4A: 0.54
+    - Vector1_EA2D80AD: 10
+    - Vector1_F591A23A: 0
+    - Vector1_e447c4cc8b7d4aa1bb50df149727dbaf: 1
+    - Vector1_e9c25d97b3c945c396e5f78c4ad28a04: 0.5
+    - Water_Depth: 1.5
+    - Wave_Height: 0.25
+    - Wave_Scale: 10
+    - Wave_Speed: 2
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 10
+    - _GlossMapScale: 1
+    - _Glossiness: 0.592
+    - _GlossyReflections: 1
+    - _Metallic: 0.087
+    - _Mode: 3
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 0
+    m_Colors:
+    - Color_C6AFCA00: {r: 0.41963333, g: 0.7735849, b: 0.58217597, a: 1}
+    - Foam_Color: {r: 1, g: 1, b: 1, a: 0.5450981}
+    - Shallow_Water_Color: {r: 0.44313726, g: 0.8750768, b: 0.8980392, a: 0.3176471}
+    - Trough_Color: {r: 0.40784317, g: 0.6313726, b: 0.6, a: 1}
+    - Vector4_C82F29BC: {r: 0.63, g: 2.51, b: 0, a: 0}
+    - _Color: {r: 0.24951048, g: 0.5943396, b: 0.5675568, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
