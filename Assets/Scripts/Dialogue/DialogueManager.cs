@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour {
 
@@ -17,6 +19,7 @@ public class DialogueManager : MonoBehaviour {
 
 	private Queue<string> sentences;
 
+	public UnityEvent completeEvent;
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<string>();
@@ -77,6 +80,12 @@ public class DialogueManager : MonoBehaviour {
 		animator.SetBool("IsOpen", false);
 		currentImage = 0;//***//
 		Time.timeScale = 1f;//***//
+		completeEvent.Invoke();
+	}
+
+	public void LoadLevel() 
+	{
+		SceneManager.LoadScene(3);
 	}
 
 }
