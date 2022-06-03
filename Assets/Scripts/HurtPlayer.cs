@@ -13,16 +13,20 @@ public class HurtPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Damage")
+        if (other.tag == "Damage")
         {
             //Pupa.Play();
             animator.SetTrigger("Hit");
             Task.Delay(2000);
             HealthManager.instance.Hurt();
-            Instantiate(HitEffect,transform.position, transform.rotation);
+            Instantiate(HitEffect, transform.position, transform.rotation);
             //animator.SetBool("Attack", true);
-            
+
         }
+        //if (other.tag == "Boss")
+        //{
+        //    other.GetComponent<BossStats>().bossCurrentHealth -= -1;
+        //}
     }
 
 }

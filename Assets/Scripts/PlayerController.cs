@@ -304,6 +304,8 @@ Vector3 lastMoveDirectionOverXZ;
                 currentEnemyInContact = enemiCont;
             }
         }
+
+
     }
 
     private void OnTriggerExit(Collider other)
