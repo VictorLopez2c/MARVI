@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3377042654888382475}
   - component: {fileID: 8090256146906880428}
   - component: {fileID: 2275593318687864880}
+  - component: {fileID: 46681393489576965}
   m_Layer: 0
   m_Name: BuildTemple01
   m_TagString: Untagged
@@ -92,8 +93,21 @@ MeshCollider:
   m_GameObject: {fileID: 1046148433212825512}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5726549534729049711, guid: 31a5e8c111e6e1b49a23f14c73250eef, type: 3}
+--- !u!65 &46681393489576965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046148433212825512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.154476, y: 11.999998, z: 9.973174}
+  m_Center: {x: -2.577238, y: 5.999999, z: 4.986589}

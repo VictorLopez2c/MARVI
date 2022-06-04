@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1.1804695, y: 1.3558486, z: 1.3558481}
   m_Children: []
   m_Father: {fileID: 1445780814489454686}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -17.972}
 --- !u!33 &583358108
 MeshFilter:
@@ -128,7 +128,7 @@ Transform:
   m_LocalScale: {x: 1.1804689, y: 1.3558481, z: 1.3558478}
   m_Children: []
   m_Father: {fileID: 1445780814489454686}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -17.972}
 --- !u!33 &1933497848
 MeshFilter:
@@ -247,6 +247,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14402518, y: 0.027342131, z: 0.043952677}
   m_Center: {x: -0.0000000028372917, y: -0.037599057, z: 0.021791533}
+--- !u!1 &2154301089841530267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720775908808018020}
+  m_Layer: 2
+  m_Name: SitioGemas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1720775908808018020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154301089841530267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1445780814489454686}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1412661888973893557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,6 +379,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 066ccec692571364ea7ae10449037d37, type: 2}
+    - target: {fileID: -5770359512283770849, guid: 10c7cd8879f9dbf488e8fb7cc24dcf64,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4870520714087691689, guid: 10c7cd8879f9dbf488e8fb7cc24dcf64,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -427,7 +462,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 10c7cd8879f9dbf488e8fb7cc24dcf64,
         type: 3}
       propertyPath: m_Name
-      value: AltarGemas_LP
+      value: AltarGemas_LP Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 10c7cd8879f9dbf488e8fb7cc24dcf64,
         type: 3}
@@ -489,6 +524,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5401483047183738656, guid: 10c7cd8879f9dbf488e8fb7cc24dcf64,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5601962651526186263, guid: 10c7cd8879f9dbf488e8fb7cc24dcf64,
         type: 3}
       propertyPath: m_Enabled
@@ -514,6 +554,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 79e53eea1caf6b84ba056a93b971882a, type: 2}
+    - target: {fileID: 6107231460073929616, guid: 10c7cd8879f9dbf488e8fb7cc24dcf64,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7583108323824388064, guid: 10c7cd8879f9dbf488e8fb7cc24dcf64,
         type: 3}
       propertyPath: m_Layer
@@ -599,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2a04825254d43428bb733573e21a1ddb, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2a04825254d43428bb733573e21a1ddb, type: 3}
       propertyPath: m_LocalScale.x
